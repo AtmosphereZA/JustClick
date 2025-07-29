@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustClick Option 2 - Dark Theme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: #0f172a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #dc2626;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            padding: 5px 15px;
+            background: #dc2626;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(220, 38, 38, 0.2);
+            color: #fbbf24;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 30%, #475569 70%, #64748b 100%);
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="rgba(220,38,38,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(251,191,36,0.08)"/><circle cx="50" cy="10" r="2" fill="rgba(220,38,38,0.06)"/><polygon points="10,50 15,40 20,50 15,60" fill="rgba(251,191,36,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #dc2626 0%, #fbbf24 50%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            color: #cbd5e1;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #dc2626, #fbbf24);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.6);
+            background: linear-gradient(45deg, #ef4444, #f59e0b);
+        }
+
+        /* Learning Areas */
+        .learning-areas {
+            padding: 100px 0;
+            background: #0f172a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #e2e8f0;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .area-card {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #475569;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #fbbf24);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+            border-color: #dc2626;
+        }
+
+        .area-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .area-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .area-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .area-card p {
+            color: #94a3b8;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #1e293b;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #cbd5e1;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, #dc2626, #991b1b, #7f1d1d);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: #0f172a;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid #475569;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.2);
+            border-color: #dc2626;
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-weight: 500;
+            border: 4px solid #475569;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            background: #334155;
+        }
+
+        .team-card:nth-child(1) .team-photo {
+            border-color: #dc2626;
+        }
+
+        .team-card:nth-child(2) .team-photo {
+            border-color: #ea580c;
+        }
+
+        .team-card:nth-child(3) .team-photo {
+            border-color: #fbbf24;
+        }
+
+        .team-card h3 {
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card p {
+            color: #94a3b8;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 100px 0;
+            background: #1e293b;
+        }
+
+        .why-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-content h2 {
+            color: #e2e8f0;
+        }
+
+        .why-content p {
+            color: #cbd5e1;
+        }
+
+        .why-content h3 {
+            color: #e2e8f0;
+            margin: 2rem 0 1rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #dc2626, #991b1b, #7f1d1d);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #dc2626 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 3rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #475569;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #334155;
+            color: #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #fbbf24;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Option Number */
+        .option-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #dc2626;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="option-badge">OPTION 2</div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">[Insert JustClick Logo Here]</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-different">Why & What</a></li>
+                <li><a href="#practical">Practical Info</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Early Learning Through Technology</h1>
+                <p>Unique perceptual stimulation for preschoolers aged 3-6 using tablets and laptops as educational tools</p>
+                <a href="#contact" class="cta-button">Start Your Child's Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Areas -->
+    <section class="learning-areas">
+        <div class="container">
+            <h2 class="section-title">Learning Areas We Develop</h2>
+            <div class="areas-grid">
+                <div class="area-card fade-in">
+                    <div class="area-icon">👁️</div>
+                    <h3>Perception</h3>
+                    <p>Visual processing and interpretation skills</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">👀</div>
+                    <h3>Visual Perception</h3>
+                    <p>Understanding and interpreting visual information</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">😊</div>
+                    <h3>Emotions</h3>
+                    <p>Emotional intelligence and expression</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧠</div>
+                    <h3>Memory</h3>
+                    <p>Building strong memory foundations</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎨</div>
+                    <h3>Creativity & Imagination</h3>
+                    <p>Fostering creative thinking and innovation</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎯</div>
+                    <h3>Concentration</h3>
+                    <p>Developing focus and attention skills</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧮</div>
+                    <h3>Mathematical Development</h3>
+                    <p>Early numeracy and problem-solving</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧩</div>
+                    <h3>Logical Thinking</h3>
+                    <p>Critical thinking and reasoning skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>About JustClick</h2>
+                    <p>For the past 20 years, JustClick has been active in more than 45 schools and nursery schools in the east of Pretoria, providing unique perceptual stimulation for preschoolers.</p>
+                    
+                    <h3>What We Offer:</h3>
+                    <ul class="features-list">
+                        <li>Unique perceptual stimulation using laptops and tablets as educational tools</li>
+                        <li>New and exciting program every week (updated annually)</li>
+                        <li>Individual attention with only 5 learners per class</li>
+                        <li>Age-appropriate software and graded lesson plans</li>
+                        <li>Weekly evaluation according to occupational therapist standards</li>
+                        <li>Early detection of possible problems</li>
+                        <li>Three comprehensive reports per year</li>
+                        <li>Regular feedback to teachers</li>
+                        <li>Affordable fees</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To develop each toddler in a positive way by ensuring that each lesson is an unforgettable experience while emphasizing each child's uniqueness and individuality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Rina Reinecke</h3>
+                    <p>Owner/Educator</p>
+                    <p>Passionate about early childhood development with 20+ years of experience.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Alida vd Kruk</h3>
+                    <p>Educator</p>
+                    <p>Dedicated educator specializing in perceptual development and technology integration.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Nadia Scholtz</h3>
+                    <p>Educator</p>
+                    <p>Expert in child development with a focus on individual learning needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section id="why-different" class="why-different">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="section-title">Why is JustClick Different?</h2>
+                <p>Technology is here to stay, and it is not just educational – it is FUN too!</p>
+                
+                <div class="highlight-box">
+                    <h3>🚀 Our Approach</h3>
+                    <ul class="features-list">
+                        <li>Devices used primarily to instill fundamental skills for reading and maths</li>
+                        <li>Skills developed incidentally in the learning programme</li>
+                        <li>Age-specific, detailed, educational, and measurable programmes</li>
+                        <li>Computers and tablets as educational apparatus in discovery journey</li>
+                        <li>Knowledgeable presenters provide loving, attentive guidance</li>
+                        <li>Foundation for Robotics education</li>
+                    </ul>
+                </div>
+
+                <h3>What is STEM Education?</h3>
+                <p>STEM education stands for Science, Technology, Engineering, and Mathematics. It emphasizes the integration of these disciplines to provide a holistic and interdisciplinary approach to learning, promoting hands-on, experiential learning and encouraging inquiry-based methods.</p>
+
+                <h3>⚠️ When Technology Becomes Detrimental:</h3>
+                <ul class="features-list">
+                    <li>When electronic devices become just pleasurable pastimes</li>
+                    <li>When toddlers repeatedly play the same games and become intellectually lazy</li>
+                    <li>When toddlers spend more than 30 minutes per day on devices</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information Section -->
+    <section id="practical" class="about">
+        <div class="container">
+            <h2 class="section-title">Practical Information</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Who May Enroll?</h3>
+                    <ul class="features-list">
+                        <li>Children between ages 3-6 years (transition from 2D to 3D phase)</li>
+                        <li>Children in need of remedial support</li>
+                        <li>Fast learners who need extra stimulation</li>
+                    </ul>
+
+                    <h3>How Does It Work?</h3>
+                    <ul class="features-list">
+                        <li>30-minute lessons in familiar school environment</li>
+                        <li>Bilingual classes (Afrikaans and English)</li>
+                        <li>All laptops and tablets provided by JustClick</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>📋 Key Definitions</h3>
+                    <p><strong>Low Muscle Tone:</strong> The tension in muscles that enables different postures against gravity, essential for all motor actions.</p>
+                    <p><strong>Crossing the Mid-line:</strong> A child's ability to reach across the imaginary line down the centre of the body with arms and legs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+            <p>Ready to give your child the best start in their learning journey?</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Child's Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="3" max="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="school">School/Nursery</label>
+                    <input type="text" id="school" name="school">
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your child's needs or any questions you have..."></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit Registration</button>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <p><strong>2025 Fees:</strong></p>
+                <p>Annual Registration Fee: R150</p>
+                <p>Term Fee: R840 (Every 3 Months)</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your registration! We will contact you soon to discuss your child\'s learning journey.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animations
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
