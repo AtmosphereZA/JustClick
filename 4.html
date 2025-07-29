@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustClick Option 4 - Corporate Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(44, 62, 80, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            padding: 8px 20px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #e74c3c;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #f39c12;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+            padding: 150px 0 100px;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="rgba(52,152,219,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            letter-spacing: -1px;
+        }
+
+        .hero .highlight {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Learning Areas */
+        .learning-areas {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 60px;
+            height: 3px;
+            background: #3498db;
+            transform: translateX(-50%);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .area-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #3498db);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-left-color: #3498db;
+        }
+
+        .area-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .area-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .area-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .area-card p {
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #7f8c8d;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .features-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8rem;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+        }
+
+        .about-visual h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-weight: 400;
+            border: 2px solid #ecf0f1;
+            background: #f8f9fa;
+        }
+
+        .team-card:nth-child(1) {
+            border-top-color: #e74c3c;
+        }
+
+        .team-card:nth-child(1) .team-photo {
+            border-color: #e74c3c;
+        }
+
+        .team-card:nth-child(2) {
+            border-top-color: #f39c12;
+        }
+
+        .team-card:nth-child(2) .team-photo {
+            border-color: #f39c12;
+        }
+
+        .team-card:nth-child(3) {
+            border-top-color: #3498db;
+        }
+
+        .team-card:nth-child(3) .team-photo {
+            border-color: #3498db;
+        }
+
+        .team-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .team-card p {
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .why-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-content h2 {
+            color: #2c3e50;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .why-content p {
+            color: #7f8c8d;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .why-content h3 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 300;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 3rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #ecf0f1;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #7f8c8d;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: white;
+            color: #2c3e50;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Option Number */
+        .option-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="option-badge">OPTION 4</div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">[Insert JustClick Logo Here]</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-different">Why & What</a></li>
+                <li><a href="#practical">Practical Info</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Early Learning Through <span class="highlight">Technology</span></h1>
+                <p>Professional perceptual stimulation for preschoolers aged 3-6 using state-of-the-art tablets and laptops as educational tools</p>
+                <a href="#contact" class="cta-button">Begin Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Areas -->
+    <section class="learning-areas">
+        <div class="container">
+            <h2 class="section-title">Core Development Areas</h2>
+            <div class="areas-grid">
+                <div class="area-card fade-in">
+                    <div class="area-icon">👁️</div>
+                    <h3>Perception</h3>
+                    <p>Advanced visual processing and interpretation skills development</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">👀</div>
+                    <h3>Visual Perception</h3>
+                    <p>Comprehensive visual information understanding and analysis</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">😊</div>
+                    <h3>Emotional Intelligence</h3>
+                    <p>Professional emotional development and expression training</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧠</div>
+                    <h3>Memory Systems</h3>
+                    <p>Structured memory enhancement and retention techniques</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎨</div>
+                    <h3>Creative Innovation</h3>
+                    <p>Systematic creativity and innovative thinking development</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎯</div>
+                    <h3>Focus & Attention</h3>
+                    <p>Targeted concentration and sustained attention training</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧮</div>
+                    <h3>Mathematical Foundations</h3>
+                    <p>Structured numeracy and analytical problem-solving</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧩</div>
+                    <h3>Logical Reasoning</h3>
+                    <p>Advanced critical thinking and systematic reasoning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>JustClick Professional Services</h2>
+                    <p>Established as a leading provider of educational technology solutions for early childhood development, with over two decades of proven results across 45+ institutions.</p>
+                    
+                    <h3>Our Comprehensive Offerings:</h3>
+                    <ul class="features-list">
+                        <li>Specialized perceptual stimulation programs using professional-grade technology</li>
+                        <li>Weekly curriculum updates with annual program evolution</li>
+                        <li>Small group instruction (maximum 5 students per session)</li>
+                        <li>Age-appropriate software and differentiated learning paths</li>
+                        <li>Occupational therapy-standard evaluations and assessments</li>
+                        <li>Early intervention and problem identification protocols</li>
+                        <li>Comprehensive quarterly progress reporting</li>
+                        <li>Regular educator collaboration and feedback systems</li>
+                        <li>Cost-effective professional development solutions</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>🎯 Our Professional Mission</h3>
+                    <p>To provide evidence-based, technology-enhanced educational interventions that maximize each child's developmental potential through systematic, individualized instruction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Professional Education Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Rina Reinecke</h3>
+                    <p><strong>Director & Lead Educator</strong></p>
+                    <p>M.Ed. Early Childhood Development, 20+ years specialized experience in technology-enhanced learning environments.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Alida vd Kruk</h3>
+                    <p><strong>Senior Educational Specialist</strong></p>
+                    <p>B.Ed. Foundation Phase, specialized certification in perceptual development and educational technology integration.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Nadia Scholtz</h3>
+                    <p><strong>Learning Development Consultant</strong></p>
+                    <p>B.A. Psychology, specialized expertise in individualized learning assessment and intervention strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section id="why-different" class="why-different">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="section-title">Professional Excellence & Innovation</h2>
+                <p><strong>Evidence-based technology integration with measurable learning outcomes</strong></p>
+                
+                <div class="highlight-box">
+                    <h3>🚀 Our Professional Methodology</h3>
+                    <ul class="features-list">
+                        <li>Technology utilized as strategic educational apparatus for foundational skill development</li>
+                        <li>Incidental learning integration throughout structured programming</li>
+                        <li>Comprehensive age-specific curriculum with detailed assessment protocols</li>
+                        <li>Expert-guided discovery learning with professional oversight</li>
+                        <li>Systematic preparation for advanced STEM education pathways</li>
+                        <li>Evidence-based approach to educational technology implementation</li>
+                    </ul>
+                </div>
+
+                <h3>STEM Education Framework</h3>
+                <p>Our STEM (Science, Technology, Engineering, Mathematics) educational approach emphasizes interdisciplinary integration, providing systematic preparation for advanced academic success through hands-on, inquiry-based learning methodologies that develop critical thinking and analytical problem-solving capabilities.</p>
+
+                <h3>Professional Guidelines for Technology Use</h3>
+                <ul class="features-list">
+                    <li>Technology use must align with educational objectives and developmental appropriateness</li>
+                    <li>Structured variety in programming prevents intellectual stagnation</li>
+                    <li>Professional time limits ensure optimal learning without screen dependency</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information Section -->
+    <section id="practical" class="about">
+        <div class="container">
+            <h2 class="section-title">Enrollment & Program Information</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Enrollment Eligibility</h3>
+                    <ul class="features-list">
+                        <li>Children ages 3-6 years (developmental transition phase)</li>
+                        <li>Students requiring specialized remedial support services</li>
+                        <li>Advanced learners needing enrichment programming</li>
+                    </ul>
+
+                    <h3>Program Structure</h3>
+                    <ul class="features-list">
+                        <li>30-minute professional sessions in familiar educational environments</li>
+                        <li>Bilingual instruction available (Afrikaans and English)</li>
+                        <li>All technology equipment provided by JustClick professionals</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>📋 Clinical Definitions</h3>
+                    <p><strong>Low Muscle Tone:</strong> Neuromuscular condition affecting postural control and motor coordination, requiring specialized intervention.</p>
+                    <p><strong>Midline Crossing:</strong> Neurological capacity for bilateral coordination across the body's central axis, essential for academic readiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Professional Assessment Request</h2>
+            <p>Submit your application for comprehensive educational assessment and program enrollment.</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Student Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Current Age</label>
+                    <input type="number" id="age" name="age" min="3" max="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="school">Current Institution</label>
+                    <input type="text" id="school" name="school">
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Please provide relevant developmental or educational information..."></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit Application</button>
+            </div>
+
+            <div style="margin-top: 3rem; font-size: 1.1rem;">
+                <p><strong>2025 Professional Fees:</strong></p>
+                <p>Initial Assessment & Registration: R150</p>
+                <p>Quarterly Program Fee: R840</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application. Our professional team will contact you within 24 hours to schedule your assessment.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animations
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
