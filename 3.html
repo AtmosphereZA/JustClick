@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustClick Option 3 - Close to Original</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            padding: 5px 15px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #ff3b3b;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            background: white;
+            color: #333;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .nav-links li a:hover {
+            background: #7CB342;
+            color: white;
+            border-color: #7CB342;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            color: #333;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #ff3b3b;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #666;
+        }
+
+        .cta-button {
+            background: #7CB342;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background: #689F38;
+            transform: translateY(-2px);
+        }
+
+        /* Learning Areas */
+        .learning-areas {
+            padding: 80px 0;
+            background: #7CB342;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .area-card {
+            background: #8BC34A;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid #7CB342;
+        }
+
+        .area-card:hover {
+            background: #9CCC65;
+            transform: translateY(-3px);
+        }
+
+        .area-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .area-card h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .area-card p {
+            color: #444;
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #ff3b3b;
+            text-transform: uppercase;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about-content h3 {
+            color: #7CB342;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+
+        .features-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #7CB342;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .about-visual {
+            background: #7CB342;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .about-visual h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .team h2 {
+            color: #ff3b3b;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #7CB342;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+            border: 3px solid #7CB342;
+            background: #f5f5f5;
+        }
+
+        .team-card:nth-child(1) .team-photo {
+            border-color: #ff3b3b;
+        }
+
+        .team-card:nth-child(2) .team-photo {
+            border-color: #ffa500;
+        }
+
+        .team-card:nth-child(3) .team-photo {
+            border-color: #7CB342;
+        }
+
+        .team-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .team-card p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .why-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-content h2 {
+            color: #ff3b3b;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .why-content p {
+            color: #666;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .why-content h3 {
+            color: #7CB342;
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+        }
+
+        .highlight-box {
+            background: #7CB342;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+        }
+
+        .highlight-box li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .highlight-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 3rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #7CB342;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: white;
+            color: #333;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff3b3b;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Option Number */
+        .option-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #7CB342;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="option-badge">OPTION 3</div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">[Insert JustClick Logo Here]</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Why & What?</a></li>
+                <li><a href="#why-different">Practical info</a></li>
+                <li><a href="#practical">Definitions</a></li>
+                <li><a href="#contact">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>JustClick</h1>
+                <p>Perceptual Stimulation with a Twist!</p>
+                <p>Unique perceptual stimulation for preschoolers aged 3-6 using tablets and laptops as educational tools</p>
+                <a href="#contact" class="cta-button">New Entry Form</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Areas -->
+    <section class="learning-areas">
+        <div class="container">
+            <h2 class="section-title">Learning Areas We Develop</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">👁️</div>
+                    <h3>Perception</h3>
+                    <p>Visual processing and interpretation skills</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">👀</div>
+                    <h3>Visual Perception</h3>
+                    <p>Understanding and interpreting visual information</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">😊</div>
+                    <h3>Emotions</h3>
+                    <p>Emotional intelligence and expression</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🧠</div>
+                    <h3>Memory</h3>
+                    <p>Building strong memory foundations</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🎨</div>
+                    <h3>Creativity</h3>
+                    <p>Fostering creative thinking and innovation</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🎯</div>
+                    <h3>Concentration</h3>
+                    <p>Developing focus and attention skills</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🧮</div>
+                    <h3>Mathematical Development</h3>
+                    <p>Early numeracy and problem-solving</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🧩</div>
+                    <h3>Logical Thinking</h3>
+                    <p>Critical thinking and reasoning skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>JustClick Offers</h2>
+                    
+                    <ul class="features-list">
+                        <li>Unique perceptual stimulation for pre-schoolers between the ages of three and six years, using laptops and tablets as educational tools</li>
+                        <li>A new and exciting program every week (updated and changed annually)</li>
+                        <li>Individual attention in an encouraging and challenging atmosphere (only five learners per class)</li>
+                        <li>Age-appropriate software</li>
+                        <li>Uniquely prepared graded lesson plans and differentiated programs</li>
+                        <li>Weekly evaluation according to occupational therapist standards</li>
+                        <li>Early detection of possible problems e.g. poor concentration / low muscle tone / crossing the midline</li>
+                        <li>Three comprehensive reports per year</li>
+                        <li>Regular feedback to teachers</li>
+                        <li>Affordable fees</li>
+                    </ul>
+
+                    <h3>The JustClick Team</h3>
+                    <ul class="features-list">
+                        <li>For the past 20 years JustClick has been active in more than 45 schools and nursery schools in the east of Pretoria</li>
+                        <li>JustClick teachers are handpicked and passionate about their work</li>
+                        <li>We strive to develop each toddler in a positive way by ensuring that each lesson is an unforgettable experience</li>
+                        <li>We emphasise each child's uniqueness and individuality</li>
+                        <li>When necessary, support is provided by professional speech, occupational and play therapists</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>Our Mission</h3>
+                    <p>To encourage learners with a high learning capacity to develop a higher standard and to further their potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Educators</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Rina Reinecke</h3>
+                    <p><strong>Owner/Educator</strong></p>
+                    <p>Passionate about early childhood development with 20+ years of experience.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Alida vd Kruk</h3>
+                    <p><strong>Educator</strong></p>
+                    <p>Dedicated educator specializing in perceptual development and technology integration.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Nadia Scholtz</h3>
+                    <p><strong>Educator</strong></p>
+                    <p>Expert in child development with a focus on individual learning needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section id="why-different" class="why-different">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="section-title">Why is JustClick Different?</h2>
+                <p><strong>Technology is here to stay, and it is not just educational – it is FUN too!</strong></p>
+                
+                <p>At JustClick we use laptops and tablets.</p>
+
+                <div class="highlight-box">
+                    <h3>Our Approach</h3>
+                    <ul>
+                        <li>Devices are used primarily to instil fundamental skills that will later enhance reading and maths skills</li>
+                        <li>Skills are developed incidentally in the learning programme</li>
+                        <li>All programmes and lessons are age-specific, planned in detail, educational, and the results are measurable</li>
+                        <li>Computers and tablets are used as educational apparatus and form part of the toddler's journey of discovery</li>
+                        <li>Guidance is lovingly and attentively provided by a knowledgeable presenter</li>
+                        <li>We lay-down the foundation for Robotics</li>
+                    </ul>
+                </div>
+
+                <h3>What is S.T.E.M Education?</h3>
+                <p>STEM education stands for Science, Technology, Engineering, and Mathematics. It emphasises the integration of these disciplines to provide a holistic and interdisciplinary approach to learning.</p>
+                <p>It promotes hands-on, experiential learning and encourages inquiry-based methods. Students engage in real-world problem-solving, fostering critical thinking and creativity.</p>
+                <p>Overall, STEM education not only develops Critical Thinking and Problem-Solving Skills, it provides a foundation for students to thrive in a technologically advanced and rapidly changing world.</p>
+
+                <h3>When do Computers and tablets become detrimental?</h3>
+                <ul class="features-list">
+                    <li>When the above-mentioned are not adhered to and using the electronic device simply becomes a pleasurable pastime</li>
+                    <li>When toddlers are allowed to repeatedly play the same games at home or even at school and they become intellectually and emotionally lazy</li>
+                    <li>When toddles spend more than 30 minutes per day on the computer or tablet</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information Section -->
+    <section id="practical" class="about">
+        <div class="container">
+            <h2 class="section-title">Practical Information</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Who may enroll?</h3>
+                    <ul class="features-list">
+                        <li>Children between the ages of three and six years may enroll (transition from the two-dimensional to the three-dimensional phase)</li>
+                        <li>Children in need of remedial support may enroll</li>
+                        <li>Fast learners who need extra stimulation may enroll</li>
+                    </ul>
+
+                    <h3>How does it work?</h3>
+                    <ul class="features-list">
+                        <li>30-minutes lessons are presented in the familiar school environment</li>
+                        <li>Bilingual classes (Afrikaans and English) are presented</li>
+                        <li>All laptops and tablets (provided by JustClick) are available</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>Key Definitions</h3>
+                    <p><strong>Low Muscle Tone:</strong> Muscle tone is the tension present in the muscles of the body, which enables one to assume different postures against gravity.</p>
+                    <p><strong>Crossing the mid-line:</strong> Refers to a child's ability to reach across the imaginary line down the centre of the body with the arms and legs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">JustClick New Entry Form</h2>
+            <p>Please complete this form to be part of our unique learning experience.</p>
+            <p>One submission per child.</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Child's Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="3" max="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="school">School/Nursery</label>
+                    <input type="text" id="school" name="school">
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your child's needs or any questions you have..."></textarea>
+                </div>
+                <button type="submit" class="cta-button">Next</button>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <p><strong>2025 Annual Registration Fee: R150</strong></p>
+                <p><strong>2025 Term Fee: R840 (Every 3 Months)</strong></p>
+                <p>Click on NEXT Below to Proceed</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your registration! We will contact you soon to discuss your child\'s learning journey.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
