@@ -26,7 +26,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 50%, #ffa500 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -34,6 +34,7 @@
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(255, 59, 59, 0.3);
         }
 
         nav {
@@ -43,12 +44,18 @@
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            height: 50px;
+            padding: 5px 15px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #ff3b3b;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -73,7 +80,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 30%, #ffa500 70%, #ffd700 100%);
             padding: 150px 0 100px;
             text-align: center;
             color: white;
@@ -88,8 +95,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="50" cy="10" r="2.5" fill="rgba(255,255,255,0.08)"/><polygon points="10,50 15,40 20,50 15,60" fill="rgba(255,215,0,0.06)"/><polygon points="90,30 95,20 100,30 95,40" fill="rgba(255,255,255,0.05)"/><rect x="30" y="70" width="4" height="4" fill="rgba(255,215,0,0.08)"/><rect x="80" y="60" width="3" height="3" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.4;
         }
 
         .hero-content {
@@ -101,10 +108,11 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            background: linear-gradient(45deg, #fff 0%, #ffd700 50%, #fff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero p {
@@ -117,29 +125,32 @@
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            color: #333;
             padding: 15px 40px;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            border: 2px solid white;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #fff, #ffd700);
+            color: #ff3b3b;
         }
 
         /* Learning Areas */
         .learning-areas {
             padding: 100px 0;
-            background: #f8fafc;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff9e6 50%, #fffbf0 100%);
         }
 
         .section-title {
@@ -163,14 +174,32 @@
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid transparent;
+            box-shadow: 0 5px 20px rgba(255, 59, 59, 0.1);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff3b3b, #ffa500, #ffd700);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
 
         .area-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(255, 59, 59, 0.2);
+            border-color: #ff3b3b;
+        }
+
+        .area-card:hover::before {
+            transform: translateX(0);
         }
 
         .area-icon {
@@ -233,17 +262,18 @@
         }
 
         .about-visual {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #ff3b3b, #ff6b6b, #ffa500);
             border-radius: 20px;
             padding: 3rem;
             text-align: center;
             color: white;
+            box-shadow: 0 10px 30px rgba(255, 59, 59, 0.3);
         }
 
         /* Team Section */
         .team {
             padding: 100px 0;
-            background: #f8fafc;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5f5 50%, #fffbf0 100%);
         }
 
         .team-grid {
@@ -268,17 +298,31 @@
         }
 
         .team-photo {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: white;
-            font-weight: bold;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: #f8f8f8;
+        }
+
+        .team-card:nth-child(1) .team-photo {
+            border-color: #ff3b3b;
+        }
+
+        .team-card:nth-child(2) .team-photo {
+            border-color: #ffa500;
+        }
+
+        .team-card:nth-child(3) .team-photo {
+            border-color: #ffd700;
         }
 
         /* Why Different Section */
@@ -294,11 +338,12 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #ff3b3b, #ff6b6b, #ffa500);
             color: white;
             padding: 3rem;
             border-radius: 20px;
             margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(255, 59, 59, 0.3);
         }
 
         .highlight-box h3 {
@@ -309,7 +354,7 @@
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 50%, #ffa500 100%);
             color: white;
             text-align: center;
         }
@@ -391,7 +436,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">JustClick</div>
+            <div class="logo">[Insert JustClick Logo Here]</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -497,19 +542,19 @@
             <h2 class="section-title">Meet Our Team</h2>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-photo">RR</div>
+                    <div class="team-photo">[Insert Photo]</div>
                     <h3>Rina Reinecke</h3>
                     <p>Owner/Educator</p>
                     <p>Passionate about early childhood development with 20+ years of experience.</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo">AK</div>
+                    <div class="team-photo">[Insert Photo]</div>
                     <h3>Alida vd Kruk</h3>
                     <p>Educator</p>
                     <p>Dedicated educator specializing in perceptual development and technology integration.</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo">NS</div>
+                    <div class="team-photo">[Insert Photo]</div>
                     <h3>Nadia Scholtz</h3>
                     <p>Educator</p>
                     <p>Expert in child development with a focus on individual learning needs.</p>
