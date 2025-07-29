@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustClick Option 5 - Playful & Whimsical</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(45deg, #fff3e0, #e8f5e8, #fff8e1, #f3e5f5);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            border-bottom: 5px solid #feca57;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 55px;
+            padding: 8px 20px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #ff6b6b;
+            font-size: 1rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #feca57;
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            background: #feca57;
+            color: #333;
+            border-color: white;
+            transform: translateY(-2px) rotate(1deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fun" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="3" fill="rgba(255,255,255,0.1)"/><polygon points="5,5 7,8 5,11 3,8" fill="rgba(254,202,87,0.1)"/><rect x="15" y="15" width="3" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23fun)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: rotate(-1deg) translateY(0); }
+            40% { transform: rotate(-1deg) translateY(-10px); }
+            60% { transform: rotate(-1deg) translateY(-5px); }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #feca57, #ff9ff3, #54a0ff, #5f27cd);
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            border: 4px solid white;
+            transform: rotate(1deg);
+        }
+
+        .cta-button:hover {
+            transform: rotate(-1deg) scale(1.1) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Learning Areas */
+        .learning-areas {
+            padding: 100px 0;
+            background: linear-gradient(45deg, #fff3e0, #e8f5e8);
+            position: relative;
+        }
+
+        .learning-areas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="7.5" cy="7.5" r="2" fill="rgba(255,107,107,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .area-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(1deg);
+        }
+
+        .area-card:nth-child(even) {
+            transform: rotate(-1deg);
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #feca57, #ff9ff3);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
+        }
+
+        .area-card:hover::before {
+            opacity: 1;
+        }
+
+        .area-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .area-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .area-card p {
+            color: #666;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(45deg, #f3e5f5, #fff8e1);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 0px #4ecdc4;
+            transform: rotate(-1deg);
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            padding-left: 3rem;
+            position: relative;
+            color: #555;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #4ecdc4;
+        }
+
+        .features-list li::before {
+            content: '🌟';
+            position: absolute;
+            left: 10px;
+            font-size: 1.5rem;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #feca57);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+            transform: rotate(2deg);
+            border: 5px solid white;
+        }
+
+        .about-visual h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: linear-gradient(45deg, #e8f5e8, #fff3e0);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 4px solid #4ecdc4;
+            transform: rotate(1deg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card:nth-child(even) {
+            transform: rotate(-1deg);
+            border-color: #feca57;
+        }
+
+        .team-card:nth-child(3) {
+            border-color: #ff9ff3;
+        }
+
+        .team-card::before {
+            content: '⭐';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .team-card:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+            border: 5px solid #4ecdc4;
+            background: linear-gradient(45deg, #fff3e0, #e8f5e8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card:nth-child(1) .team-photo {
+            border-color: #ff6b6b;
+        }
+
+        .team-card:nth-child(2) .team-photo {
+            border-color: #feca57;
+        }
+
+        .team-card:nth-child(3) .team-photo {
+            border-color: #ff9ff3;
+        }
+
+        .team-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .team-card p {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 100px 0;
+            background: linear-gradient(45deg, #fff8e1, #f3e5f5);
+        }
+
+        .why-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-content h2 {
+            color: #ff6b6b;
+            text-align: center;
+            font-weight: 900;
+            text-shadow: 2px 2px 0px #4ecdc4;
+            transform: rotate(-1deg);
+        }
+
+        .why-content p {
+            color: #555;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .why-content h3 {
+            color: #4ecdc4;
+            margin: 2rem 0 1rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #feca57);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+            border: 5px solid white;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '🚀';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #feca57 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="25" height="25" patternUnits="userSpaceOnUse"><polygon points="12.5,2 15.3,8.8 22.5,8.8 16.6,13.4 19.4,20.2 12.5,15.6 5.6,20.2 8.4,13.4 2.5,8.8 9.7,8.8" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.2;
+        }
+
+        .contact h2 {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 3rem auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 4px solid white;
+            border-radius: 20px;
+            font-size: 1rem;
+            background: white;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #feca57;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Option Number */
+        .option-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            font-weight: 800;
+            z-index: 1001;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+            border: 3px solid #feca57;
+            transform: rotate(-3deg);
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        /* Fun floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .floating-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { left: 70%; animation-delay: 1s; }
+        .floating-element:nth-child(5) { left: 80%; animation-delay: 3s; }
+        .floating-element:nth-child(6) { left: 90%; animation-delay: 5s; }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">🎈</div>
+        <div class="floating-element">⭐</div>
+        <div class="floating-element">🎨</div>
+        <div class="floating-element">🎯</div>
+        <div class="floating-element">🧩</div>
+        <div class="floating-element">🎪</div>
+    </div>
+
+    <div class="option-badge">OPTION 5</div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">[Insert JustClick Logo Here]</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-different">Why & What</a></li>
+                <li><a href="#practical">Info</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Fun Learning Adventures!</h1>
+                <p>🌟 Super cool computer games that make learning AMAZING for kids aged 3-6! 🌈</p>
+                <a href="#contact" class="cta-button">Let's Play & Learn!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Areas -->
+    <section class="learning-areas">
+        <div class="container">
+            <h2 class="section-title">Amazing Skills We Build! 🚀</h2>
+            <div class="areas-grid">
+                <div class="area-card fade-in">
+                    <div class="area-icon">👁️</div>
+                    <h3>Super Vision</h3>
+                    <p>See and understand everything around you like a superhero!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">👀</div>
+                    <h3>Eagle Eyes</h3>
+                    <p>Spot details and patterns that others might miss!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">😊</div>
+                    <h3>Happy Feelings</h3>
+                    <p>Learn about emotions and express yourself with confidence!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧠</div>
+                    <h3>Memory Magic</h3>
+                    <p>Remember things like magic and never forget important stuff!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎨</div>
+                    <h3>Creative Genius</h3>
+                    <p>Create amazing art and think of the coolest ideas ever!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎯</div>
+                    <h3>Focus Power</h3>
+                    <p>Stay focused like a ninja and complete any challenge!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧮</div>
+                    <h3>Math Wizard</h3>
+                    <p>Count, add, and solve puzzles like a mathematical wizard!</p>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧩</div>
+                    <h3>Logic Master</h3>
+                    <p>Solve puzzles and think through problems step by step!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>What Makes Us AWESOME! 🌟</h2>
+                    <p>For 20 whole years, we've been making learning super fun for kids just like you! We visit over 45 schools and make every day an adventure!</p>
+                    
+                    <h3>🎪 Our Cool Promises:</h3>
+                    <ul class="features-list">
+                        <li>Fun computer games that teach you amazing things!</li>
+                        <li>Brand new games every single week - never boring!</li>
+                        <li>Small groups of only 5 friends so everyone gets attention</li>
+                        <li>Games made just for your age - not too easy, not too hard!</li>
+                        <li>Special checks to make sure you're learning and growing</li>
+                        <li>We spot problems early and help fix them</li>
+                        <li>Three super cool report cards per year for your parents</li>
+                        <li>We talk to your teachers about how awesome you are</li>
+                        <li>All this fun for a price your parents will love!</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>🎯 Our Super Mission!</h3>
+                    <p>To make every single lesson the most FUN and UNFORGETTABLE experience ever, while helping each amazing kid discover just how special and unique they really are! 🌈</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Super Teachers! 👩‍🏫</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Miss Rina</h3>
+                    <p><strong>The Amazing Boss Lady! 👑</strong></p>
+                    <p>She's been making learning fun for 20+ years and knows everything about helping kids become super smart!</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Miss Alida</h3>
+                    <p><strong>The Computer Game Expert! 💻</strong></p>
+                    <p>She knows all the best computer games and activities that make learning feel like playing!</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Insert Photo]</div>
+                    <h3>Miss Nadia</h3>
+                    <p><strong>The Super Helper! 🦸‍♀️</strong></p>
+                    <p>She notices what makes each kid special and helps everyone learn in their own amazing way!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section id="why-different" class="why-different">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="section-title">Why We're the COOLEST! 🎪</h2>
+                <p><strong>🎮 Computers and tablets aren't just for grown-ups - they're SUPER FUN learning tools! 🌟</strong></p>
+                
+                <div class="highlight-box">
+                    <h3>🚀 Our Secret Recipe for Fun!</h3>
+                    <ul class="features-list">
+                        <li>We use computers to make reading and math feel like video games!</li>
+                        <li>You learn cool skills without even realizing it!</li>
+                        <li>Every activity is made just for kids your age</li>
+                        <li>Computers help you discover amazing new things every day</li>
+                        <li>Our super teachers guide you on every adventure</li>
+                        <li>We even teach you about robots and how they work!</li>
+                    </ul>
+                </div>
+
+                <h3>🔬 What is STEM? (It's AWESOME!)</h3>
+                <p>STEM means Science, Technology, Engineering, and Math - but we make it feel like playing with the coolest toys ever! You get to build things, solve puzzles, and discover how everything in the world works. It's like being a detective, inventor, and explorer all at once!</p>
+
+                <h3>⚠️ When Screen Time Isn't Cool:</h3>
+                <ul class="features-list">
+                    <li>When you just sit and stare at screens without learning anything new</li>
+                    <li>When you play the same boring games over and over</li>
+                    <li>When you spend more than 30 minutes a day on screens (that's not healthy!)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information Section -->
+    <section id="practical" class="about">
+        <div class="container">
+            <h2 class="section-title">Fun Facts for Parents! 📋</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>🎈 Who Can Join Our Fun Club?</h3>
+                    <ul class="features-list">
+                        <li>Super cool kids between 3 and 6 years old!</li>
+                        <li>Kids who might need a little extra help with learning</li>
+                        <li>Really smart kids who want even MORE fun challenges!</li>
+                    </ul>
+
+                    <h3>🎪 How Does Our Magic Work?</h3>
+                    <ul class="features-list">
+                        <li>30 minutes of pure fun right at your school!</li>
+                        <li>We speak both English and Afrikaans - how cool is that?</li>
+                        <li>We bring all our special computers and tablets to you!</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>🤓 Smart Words Explained!</h3>
+                    <p><strong>Low Muscle Tone:</strong> Sometimes kids' muscles need extra practice to get strong and help them sit up straight and write nicely.</p>
+                    <p><strong>Crossing the Midline:</strong> This means being able to reach across your body with your arms and legs - super important for writing and sports!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Join Our Fun Adventure! 🎊</h2>
+            <p>🌟 Fill out this magical form and let the learning adventures begin! 🚀</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Super Kid's Name 👦👧</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">How Old Are They? 🎂</label>
+                    <input type="number" id="age" name="age" min="3" max="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name 👨‍👩‍👧‍👦</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address 📧</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number 📱</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="school">School/Nursery 🏫</label>
+                    <input type="text" id="school" name="school">
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell Us Something Cool! 💭</label>
+                    <textarea id="message" name="message" placeholder="What makes your kid awesome? Any special interests or needs?"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Start the Adventure! 🚀</button>
+            </div>
+
+            <div style="margin-top: 3rem; font-size: 1.2rem; position: relative; z-index: 2;">
+                <p><strong>🎪 2025 Fun Fees:</strong></p>
+                <p>🎫 Join Our Club: R150</p>
+                <p>🎮 3 Months of Fun: R840</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🎉 WOW! Thank you for joining our fun adventure! We\'ll call you soon to start the amazing learning journey! 🌟');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animations
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
