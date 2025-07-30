@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustClick - Early Learning Through Technology</title>
+    <title>JustClick Option 5B - Playful & Whimsical</title>
+   <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
     <style>
         * {
             margin: 0;
@@ -12,29 +17,46 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            color: #fff;
+            background: #1a1a1a;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(254, 202, 87, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 50%, #ffa500 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(255, 59, 59, 0.3);
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            border-bottom: 5px solid #feca57;
         }
 
         nav {
@@ -44,43 +66,56 @@
         }
 
         .logo {
-            height: 50px;
-            padding: 5px 15px;
+            height: 55px;
+            padding: 8px 20px;
             background: white;
-            border-radius: 10px;
+            border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            color: #ff3b3b;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.9rem;
+            font-weight: 800;
+            color: #ff6b6b;
+            font-size: 1rem;
             white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #feca57;
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(2deg) scale(1.05);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
+            padding: 10px 20px;
             border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background: #feca57;
+            color: #333;
+            border-color: white;
+            transform: translateY(-2px) rotate(1deg);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 30%, #ffa500 70%, #ffd700 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
             padding: 150px 0 100px;
             text-align: center;
             color: white;
@@ -95,8 +130,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="50" cy="10" r="2.5" fill="rgba(255,255,255,0.08)"/><polygon points="10,50 15,40 20,50 15,60" fill="rgba(255,215,0,0.06)"/><polygon points="90,30 95,20 100,30 95,40" fill="rgba(255,255,255,0.05)"/><rect x="30" y="70" width="4" height="4" fill="rgba(255,215,0,0.08)"/><rect x="80" y="60" width="3" height="3" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.4;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fun" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="3" fill="rgba(255,255,255,0.1)"/><polygon points="5,5 7,8 5,11 3,8" fill="rgba(254,202,87,0.1)"/><rect x="15" y="15" width="3" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23fun)"/></svg>');
+            opacity: 0.6;
         }
 
         .hero-content {
@@ -105,119 +140,171 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-size: 3.8rem;
+            font-weight: 900;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff 0%, #ffd700 50%, #fff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: rotate(-1deg) translateY(0); }
+            40% { transform: rotate(-1deg) translateY(-10px); }
+            60% { transform: rotate(-1deg) translateY(-5px); }
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ffd700, #ffa500);
-            color: #333;
-            padding: 15px 40px;
+            background: linear-gradient(45deg, #feca57, #ff9ff3, #54a0ff, #5f27cd);
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            padding: 18px 45px;
             border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
+            border-radius: 35px;
+            font-size: 1.2rem;
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-            border: 2px solid white;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            border: 4px solid white;
+            transform: rotate(1deg);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
-            background: linear-gradient(45deg, #fff, #ffd700);
-            color: #ff3b3b;
+            transform: rotate(-1deg) scale(1.1) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
         }
 
         /* Learning Areas */
         .learning-areas {
             padding: 100px 0;
-            background: linear-gradient(135deg, #fff5f5 0%, #fff9e6 50%, #fffbf0 100%);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: #2d3748;
-        }
-
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .area-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(255, 59, 59, 0.1);
-            border: 3px solid transparent;
+            background: rgba(0, 0, 0, 0.3);
             position: relative;
-            overflow: hidden;
         }
 
-        .area-card::before {
+        .learning-areas::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ff3b3b, #ffa500, #ffd700);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="7.5" cy="7.5" r="2" fill="rgba(255,107,107,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .area-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(1deg);
+        }
+
+        .area-card:nth-child(even) {
+            transform: rotate(-1deg);
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #feca57, #ff9ff3);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .area-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 59, 59, 0.2);
-            border-color: #ff3b3b;
+            transform: rotate(0deg) scale(1.05) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
         }
 
         .area-card:hover::before {
-            transform: translateX(0);
+            opacity: 1;
         }
 
         .area-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
         }
 
         .area-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 800;
             margin-bottom: 1rem;
-            color: #2d3748;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .area-card p {
+            color: #666;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
         /* About Section */
         .about {
             padding: 100px 0;
-            background: white;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><polygon points="10,2 12,7 17,7 13,10 15,15 10,12 5,15 7,10 3,7 8,7" fill="rgba(78,205,196,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.3;
         }
 
         .about-grid {
@@ -225,19 +312,39 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .about-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 900;
             margin-bottom: 2rem;
-            color: #2d3748;
+            color: #fff;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
         }
 
         .about-content p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            color: #4a5568;
+            color: #e0e0e0;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content h3 {
+            color: #feca57;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
         }
 
         .features-list {
@@ -246,122 +353,261 @@
         }
 
         .features-list li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
+            padding: 0.8rem 0;
+            padding-left: 3rem;
             position: relative;
-            color: #4a5568;
+            color: #e0e0e0;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 0.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #4ecdc4;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .features-list li::before {
-            content: '✓';
+            content: '🌟';
             position: absolute;
-            left: 0;
-            color: #48bb78;
-            font-weight: bold;
-            font-size: 1.2rem;
+            left: 10px;
+            font-size: 1.5rem;
         }
 
         .about-visual {
-            background: linear-gradient(135deg, #ff3b3b, #ff6b6b, #ffa500);
-            border-radius: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #feca57);
+            border-radius: 25px;
             padding: 3rem;
             text-align: center;
             color: white;
-            box-shadow: 0 10px 30px rgba(255, 59, 59, 0.3);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+            transform: rotate(2deg);
+            border: 5px solid white;
+        }
+
+        .about-visual h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Team Section */
         .team {
             padding: 100px 0;
-            background: linear-gradient(135deg, #fff9e6 0%, #fff5f5 50%, #fffbf0 100%);
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .team::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M12.5,20 C12.5,15 8,10 4,15 C0,10 -4.5,15 -4.5,20 C-4.5,25 12.5,35 12.5,35 C12.5,35 29.5,25 29.5,20 C29.5,15 25,10 21,15 C17,10 12.5,15 12.5,20 Z" fill="rgba(254,202,87,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+            opacity: 0.2;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .team-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 25px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            border: 4px solid #4ecdc4;
+            transform: rotate(1deg);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .team-card:nth-child(even) {
+            transform: rotate(-1deg);
+            border-color: #feca57;
+        }
+
+        .team-card:nth-child(3) {
+            border-color: #ff9ff3;
+        }
+
+        .team-card::before {
+            content: '⭐';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            opacity: 0.3;
         }
 
         .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: rotate(0deg) scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .team-photo {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #666;
-            font-weight: 500;
-            border: 4px solid #fff;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            background: #f8f8f8;
+            font-weight: 600;
+            border: 5px solid #4ecdc4;
+            background: linear-gradient(45deg, #fff3e0, #e8f5e8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .team-card:nth-child(1) .team-photo {
-            border-color: #ff3b3b;
+            border-color: #ff6b6b;
         }
 
         .team-card:nth-child(2) .team-photo {
-            border-color: #ffa500;
+            border-color: #feca57;
         }
 
         .team-card:nth-child(3) .team-photo {
-            border-color: #ffd700;
+            border-color: #ff9ff3;
+        }
+
+        .team-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .team-card p {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         /* Why Different Section */
         .why-different {
             padding: 100px 0;
-            background: white;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .why-different::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="rockets" width="30" height="30" patternUnits="userSpaceOnUse"><text x="15" y="20" font-size="16" text-anchor="middle" fill="rgba(255,107,107,0.1)">🚀</text></pattern></defs><rect width="100" height="100" fill="url(%23rockets)"/></svg>');
+            opacity: 0.3;
         }
 
         .why-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .why-content h2 {
+            color: #fff;
             text-align: center;
+            font-weight: 900;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-content p {
+            color: #e0e0e0;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-content h3 {
+            color: #feca57;
+            margin: 2rem 0 1rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #ff3b3b, #ff6b6b, #ffa500);
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #feca57);
             color: white;
             padding: 3rem;
-            border-radius: 20px;
+            border-radius: 25px;
             margin: 3rem 0;
-            box-shadow: 0 10px 30px rgba(255, 59, 59, 0.3);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+            border: 5px solid white;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '🚀';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.5;
         }
 
         .highlight-box h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
+            color: white;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, #ff3b3b 0%, #ff6b6b 50%, #ffa500 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #feca57 100%);
             color: white;
             text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="25" height="25" patternUnits="userSpaceOnUse"><polygon points="12.5,2 15.3,8.8 22.5,8.8 16.6,13.4 19.4,20.2 12.5,15.6 5.6,20.2 8.4,13.4 2.5,8.8 9.7,8.8" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.2;
+        }
+
+        .contact h2 {
+            position: relative;
+            z-index: 2;
         }
 
         .contact-form {
             max-width: 500px;
             margin: 3rem auto 0;
+            position: relative;
+            z-index: 2;
         }
 
         .form-group {
@@ -372,17 +618,31 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 10px;
+            padding: 15px 20px;
+            border: 4px solid white;
+            border-radius: 20px;
             font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #feca57;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .form-group textarea {
@@ -397,7 +657,7 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .about-grid {
@@ -430,18 +690,76 @@
         .fade-in {
             animation: fadeInUp 0.6s ease-out;
         }
+
+        /* Option Number */
+        .option-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            font-weight: 800;
+            z-index: 1001;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+            border: 3px solid #feca57;
+            transform: rotate(-3deg);
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        /* Fun floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .floating-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { left: 70%; animation-delay: 1s; }
+        .floating-element:nth-child(5) { left: 80%; animation-delay: 3s; }
+        .floating-element:nth-child(6) { left: 90%; animation-delay: 5s; }
     </style>
 </head>
 <body>
+    <div class="floating-elements">
+        <div class="floating-element">🎈</div>
+        <div class="floating-element">⭐</div>
+        <div class="floating-element">🎨</div>
+        <div class="floating-element">🎯</div>
+        <div class="floating-element">🧩</div>
+        <div class="floating-element">🎪</div>
+    </div>
+
+    <div class="option-badge">OPTION 5B</div>
+
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">[Insert JustClick Logo Here]</div>
+            <div class="logo"><img src="assets/images/logo.png" alt="JustClick Logo" style="height: 100%; width: auto;"></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#why-different">Why & What</a></li>
-                <li><a href="#practical">Practical Info</a></li>
+                <li><a href="#practical">Info</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -451,9 +769,9 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>Early Learning Through Technology</h1>
-                <p>Unique perceptual stimulation for preschoolers aged 3-6 using tablets and laptops as educational tools</p>
-                <a href="#contact" class="cta-button">Start Your Child's Journey</a>
+                <h1>Fun Learning Adventures!</h1>
+                <p>🌟 Super cool computer games that make learning AMAZING for kids aged 3-6! 🌈</p>
+                <a href="#contact" class="cta-button">Let's Play & Learn!</a>
             </div>
         </div>
     </section>
@@ -461,47 +779,47 @@
     <!-- Learning Areas -->
     <section class="learning-areas">
         <div class="container">
-            <h2 class="section-title">Learning Areas We Develop</h2>
+            <h2 class="section-title">Amazing Skills We Build! 🚀</h2>
             <div class="areas-grid">
                 <div class="area-card fade-in">
                     <div class="area-icon">👁️</div>
-                    <h3>Perception</h3>
-                    <p>Visual processing and interpretation skills</p>
+                    <h3>Super Vision</h3>
+                    <p>See and understand everything around you like a superhero!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">👀</div>
-                    <h3>Visual Perception</h3>
-                    <p>Understanding and interpreting visual information</p>
+                    <h3>Eagle Eyes</h3>
+                    <p>Spot details and patterns that others might miss!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">😊</div>
-                    <h3>Emotions</h3>
-                    <p>Emotional intelligence and expression</p>
+                    <h3>Happy Feelings</h3>
+                    <p>Learn about emotions and express yourself with confidence!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">🧠</div>
-                    <h3>Memory</h3>
-                    <p>Building strong memory foundations</p>
+                    <h3>Memory Magic</h3>
+                    <p>Remember things like magic and never forget important stuff!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">🎨</div>
-                    <h3>Creativity & Imagination</h3>
-                    <p>Fostering creative thinking and innovation</p>
+                    <h3>Creative Genius</h3>
+                    <p>Create amazing art and think of the coolest ideas ever!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">🎯</div>
-                    <h3>Concentration</h3>
-                    <p>Developing focus and attention skills</p>
+                    <h3>Focus Power</h3>
+                    <p>Stay focused like a ninja and complete any challenge!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">🧮</div>
-                    <h3>Mathematical Development</h3>
-                    <p>Early numeracy and problem-solving</p>
+                    <h3>Math Wizard</h3>
+                    <p>Count, add, and solve puzzles like a mathematical wizard!</p>
                 </div>
                 <div class="area-card fade-in">
                     <div class="area-icon">🧩</div>
-                    <h3>Logical Thinking</h3>
-                    <p>Critical thinking and reasoning skills</p>
+                    <h3>Logic Master</h3>
+                    <p>Solve puzzles and think through problems step by step!</p>
                 </div>
             </div>
         </div>
@@ -512,25 +830,25 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-content">
-                    <h2>About JustClick</h2>
-                    <p>For the past 20 years, JustClick has been active in more than 45 schools and nursery schools in the east of Pretoria, providing unique perceptual stimulation for preschoolers.</p>
+                    <h2>What Makes Us AWESOME! 🌟</h2>
+                    <p>For 20 whole years, we've been making learning super fun for kids just like you! We visit over 45 schools and make every day an adventure!</p>
                     
-                    <h3>What We Offer:</h3>
+                    <h3>🎪 Our Cool Promises:</h3>
                     <ul class="features-list">
-                        <li>Unique perceptual stimulation using laptops and tablets as educational tools</li>
-                        <li>New and exciting program every week (updated annually)</li>
-                        <li>Individual attention with only 5 learners per class</li>
-                        <li>Age-appropriate software and graded lesson plans</li>
-                        <li>Weekly evaluation according to occupational therapist standards</li>
-                        <li>Early detection of possible problems</li>
-                        <li>Three comprehensive reports per year</li>
-                        <li>Regular feedback to teachers</li>
-                        <li>Affordable fees</li>
+                        <li>Fun computer games that teach you amazing things!</li>
+                        <li>Brand new games every single week - never boring!</li>
+                        <li>Small groups of only 5 friends so everyone gets attention</li>
+                        <li>Games made just for your age - not too easy, not too hard!</li>
+                        <li>Special checks to make sure you're learning and growing</li>
+                        <li>We spot problems early and help fix them</li>
+                        <li>Three super cool report cards per year for your parents</li>
+                        <li>We talk to your teachers about how awesome you are</li>
+                        <li>All this fun for a price your parents will love!</li>
                     </ul>
                 </div>
                 <div class="about-visual">
-                    <h3>🎯 Our Mission</h3>
-                    <p>To develop each toddler in a positive way by ensuring that each lesson is an unforgettable experience while emphasizing each child's uniqueness and individuality.</p>
+                    <h3>🎯 Our Super Mission!</h3>
+                    <p>To make every single lesson the most FUN and UNFORGETTABLE experience ever, while helping each amazing kid discover just how special and unique they really are! 🌈</p>
                 </div>
             </div>
         </div>
@@ -539,25 +857,25 @@
     <!-- Team Section -->
     <section class="team">
         <div class="container">
-            <h2 class="section-title">Meet Our Team</h2>
+            <h2 class="section-title">Meet Our Super Teachers! 👩‍🏫</h2>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-photo">[Insert Photo]</div>
+                    <div class="team-photo"><img src="assets/images/rina-photo.jpg" alt="Rina Reinecke" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Rina Reinecke</h3>
-                    <p>Owner/Educator</p>
-                    <p>Passionate about early childhood development with 20+ years of experience.</p>
+                    <p><strong>The Amazing Boss Lady! 👑</strong></p>
+                    <p>She's been making learning fun for 20+ years and knows everything about helping kids become super smart!</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo">[Insert Photo]</div>
+                    <div class="team-photo"><img src="assets/images/alida-photo.jpg" alt="Alida vd Kruk" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Alida vd Kruk</h3>
-                    <p>Educator</p>
-                    <p>Dedicated educator specializing in perceptual development and technology integration.</p>
+                    <p><strong>Die Een tannie! 💻</strong></p>
+                    <p>She knows all the best computer games and activities that make learning feel like playing!</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo">[Insert Photo]</div>
+                    <div class="team-photo"><img src="assets/images/nadia-photo.jpg" alt="Nadia Scholtz" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Nadia Scholtz</h3>
-                    <p>Educator</p>
-                    <p>Expert in child development with a focus on individual learning needs.</p>
+                    <p><strong>Die Ander Tannie! 🦸‍♀️</strong></p>
+                    <p>She notices what makes each kid special and helps everyone learn in their own amazing way!</p>
                 </div>
             </div>
         </div>
@@ -567,29 +885,29 @@
     <section id="why-different" class="why-different">
         <div class="container">
             <div class="why-content">
-                <h2 class="section-title">Why is JustClick Different?</h2>
-                <p>Technology is here to stay, and it is not just educational – it is FUN too!</p>
+                <h2 class="section-title">Why We're the COOLEST! 🎪</h2>
+                <p><strong>🎮 Computers and tablets aren't just for grown-ups - they're SUPER FUN learning tools! 🌟</strong></p>
                 
                 <div class="highlight-box">
-                    <h3>🚀 Our Approach</h3>
+                    <h3>🚀 Our Secret Recipe for Fun!</h3>
                     <ul class="features-list">
-                        <li>Devices used primarily to instill fundamental skills for reading and maths</li>
-                        <li>Skills developed incidentally in the learning programme</li>
-                        <li>Age-specific, detailed, educational, and measurable programmes</li>
-                        <li>Computers and tablets as educational apparatus in discovery journey</li>
-                        <li>Knowledgeable presenters provide loving, attentive guidance</li>
-                        <li>Foundation for Robotics education</li>
+                        <li>We use computers to make reading and math feel like video games!</li>
+                        <li>You learn cool skills without even realizing it!</li>
+                        <li>Every activity is made just for kids your age</li>
+                        <li>Computers help you discover amazing new things every day</li>
+                        <li>Our super teachers guide you on every adventure</li>
+                        <li>We even teach you about robots and how they work!</li>
                     </ul>
                 </div>
 
-                <h3>What is STEM Education?</h3>
-                <p>STEM education stands for Science, Technology, Engineering, and Mathematics. It emphasizes the integration of these disciplines to provide a holistic and interdisciplinary approach to learning, promoting hands-on, experiential learning and encouraging inquiry-based methods.</p>
+                <h3>🔬 What is STEM? (It's AWESOME!)</h3>
+                <p>STEM means Science, Technology, Engineering, and Math - but we make it feel like playing with the coolest toys ever! You get to build things, solve puzzles, and discover how everything in the world works. It's like being a detective, inventor, and explorer all at once!</p>
 
-                <h3>⚠️ When Technology Becomes Detrimental:</h3>
+                <h3>⚠️ When Screen Time Isn't Cool:</h3>
                 <ul class="features-list">
-                    <li>When electronic devices become just pleasurable pastimes</li>
-                    <li>When toddlers repeatedly play the same games and become intellectually lazy</li>
-                    <li>When toddlers spend more than 30 minutes per day on devices</li>
+                    <li>When you just sit and stare at screens without learning anything new</li>
+                    <li>When you play the same boring games over and over</li>
+                    <li>When you spend more than 30 minutes a day on screens (that's not healthy!)</li>
                 </ul>
             </div>
         </div>
@@ -598,27 +916,27 @@
     <!-- Practical Information Section -->
     <section id="practical" class="about">
         <div class="container">
-            <h2 class="section-title">Practical Information</h2>
+            <h2 class="section-title">Fun Facts for Parents! 📋</h2>
             <div class="about-grid">
                 <div class="about-content">
-                    <h3>Who May Enroll?</h3>
+                    <h3>🎈 Who Can Join Our Fun Club?</h3>
                     <ul class="features-list">
-                        <li>Children between ages 3-6 years (transition from 2D to 3D phase)</li>
-                        <li>Children in need of remedial support</li>
-                        <li>Fast learners who need extra stimulation</li>
+                        <li>Super cool kids between 3 and 6 years old!</li>
+                        <li>Kids who might need a little extra help with learning</li>
+                        <li>Really smart kids who want even MORE fun challenges!</li>
                     </ul>
 
-                    <h3>How Does It Work?</h3>
+                    <h3>🎪 How Does Our Magic Work?</h3>
                     <ul class="features-list">
-                        <li>30-minute lessons in familiar school environment</li>
-                        <li>Bilingual classes (Afrikaans and English)</li>
-                        <li>All laptops and tablets provided by JustClick</li>
+                        <li>30 minutes of pure fun right at your school!</li>
+                        <li>We speak both English and Afrikaans - how cool is that?</li>
+                        <li>We bring all our special computers and tablets to you!</li>
                     </ul>
                 </div>
                 <div class="about-visual">
-                    <h3>📋 Key Definitions</h3>
-                    <p><strong>Low Muscle Tone:</strong> The tension in muscles that enables different postures against gravity, essential for all motor actions.</p>
-                    <p><strong>Crossing the Mid-line:</strong> A child's ability to reach across the imaginary line down the centre of the body with arms and legs.</p>
+                    <h3>🤓 Smart Words Explained!</h3>
+                    <p><strong>Low Muscle Tone:</strong> Sometimes kids' muscles need extra practice to get strong and help them sit up straight and write nicely.</p>
+                    <p><strong>Crossing the Midline:</strong> This means being able to reach across your body with your arms and legs - super important for writing and sports!</p>
                 </div>
             </div>
         </div>
@@ -627,45 +945,45 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get Started Today</h2>
-            <p>Ready to give your child the best start in their learning journey?</p>
+            <h2 class="section-title">Join Our Fun Adventure! 🎊</h2>
+            <p>🌟 Fill out this magical form and let the learning adventures begin! 🚀</p>
             
             <div class="contact-form">
                 <div class="form-group">
-                    <label for="name">Child's Name</label>
+                    <label for="name">Your Super Kid's Name 👦👧</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="age">Age</label>
+                    <label for="age">How Old Are They? 🎂</label>
                     <input type="number" id="age" name="age" min="3" max="6" required>
                 </div>
                 <div class="form-group">
-                    <label for="parent-name">Parent Name</label>
+                    <label for="parent-name">Parent/Guardian Name 👨‍👩‍👧‍👦</label>
                     <input type="text" id="parent-name" name="parent-name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email Address 📧</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone">Phone Number 📱</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="school">School/Nursery</label>
+                    <label for="school">School/Nursery 🏫</label>
                     <input type="text" id="school" name="school">
                 </div>
                 <div class="form-group">
-                    <label for="message">Additional Information</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your child's needs or any questions you have..."></textarea>
+                    <label for="message">Tell Us Something Cool! 💭</label>
+                    <textarea id="message" name="message" placeholder="What makes your kid awesome? Any special interests or needs?"></textarea>
                 </div>
-                <button type="submit" class="cta-button">Submit Registration</button>
+                <button type="submit" class="cta-button">Start the Adventure! 🚀</button>
             </div>
 
-            <div style="margin-top: 3rem;">
-                <p><strong>2025 Fees:</strong></p>
-                <p>Annual Registration Fee: R150</p>
-                <p>Term Fee: R840 (Every 3 Months)</p>
+            <div style="margin-top: 3rem; font-size: 1.2rem; position: relative; z-index: 2;">
+                <p><strong>🎪 2025 Fun Fees:</strong></p>
+                <p>🎫 Join Our Club: R150</p>
+                <p>🎮 3 Months of Fun: R840</p>
             </div>
         </div>
     </section>
@@ -674,7 +992,7 @@
         // Simple form handling
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your registration! We will contact you soon to discuss your child\'s learning journey.');
+            alert('🎉 WOW! Thank you for joining our fun adventure! We\'ll call you soon to start the amazing learning journey! 🌟');
         });
 
         // Smooth scrolling for navigation links
