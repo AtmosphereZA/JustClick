@@ -13,7 +13,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustClick Option 5C - Professional Content</title>
+    <title>JustClick Option 5D - Professional Content</title>
    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -67,12 +67,247 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
             border-bottom: 5px solid #feca57;
+            transition: all 0.3s ease;
+        }
+
+        header.compact {
+            padding: 0;
+            border-bottom: 1px solid #feca57;
+            box-shadow: 0 1px 5px rgba(255, 107, 107, 0.1);
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9) 0%, rgba(78, 205, 196, 0.9) 50%, rgba(69, 183, 209, 0.9) 100%);
+            height: 40px;
+        }
+
+        header.compact .container {
+            padding: 0 20px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        header.compact .hamburger {
+            padding: 2px;
+            transform: scale(0.6);
+        }
+
+        header.compact .hamburger span {
+            width: 16px;
+            height: 1px;
+            margin: 2px 0;
+        }
+
+        header.compact .logo {
+            opacity: 0;
+            transform: rotate(-2deg) scale(0.8);
+            pointer-events: none;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        header.compact .nav-links {
+            display: none;
+        }
+
+        header.compact .hamburger {
+            display: flex;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 320px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            z-index: 1001;
+            padding: 80px 20px 20px;
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid #4ecdc4;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tech-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(78,205,196,0.1)" stroke-width="0.5"/><circle cx="0" cy="0" r="1" fill="rgba(78,205,196,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23tech-grid)"/></svg>');
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .tech-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #4ecdc4;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tech-header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
+            margin-top: 0.5rem;
+        }
+
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0.8rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(78, 205, 196, 0.1);
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+
+        .mobile-menu a::before {
+            content: '▶';
+            margin-right: 10px;
+            color: #4ecdc4;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: rgba(78, 205, 196, 0.2);
+            border-color: #4ecdc4;
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+
+        .mobile-menu a:hover::before {
+            color: #feca57;
+            transform: scale(1.2);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #4ecdc4;
+            cursor: pointer;
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .close-menu:hover {
+            background: rgba(78, 205, 196, 0.2);
+            border-color: #4ecdc4;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-logo {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(78, 205, 196, 0.05);
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            border-radius: 15px;
+            z-index: 2;
+        }
+
+        .menu-logo img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 10px;
+            background: white;
+            padding: 5px;
+            border: 2px solid #4ecdc4;
+        }
+
+        .logo-text {
+            color: #4ecdc4;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            color: rgba(78, 205, 196, 0.7);
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.5px;
         }
 
         .logo {
@@ -98,15 +333,7 @@
             transform: rotate(2deg) scale(1.05);
         }
 
-        .logo.hidden {
-            opacity: 0;
-            transform: rotate(-2deg) scale(0.8);
-            pointer-events: none;
-        }
-
-        .logo {
-            transition: all 0.3s ease;
-        }
+        
 
         .nav-links {
             display: flex;
@@ -791,11 +1018,18 @@
             padding: 12px 18px;
             border-radius: 50px;
             font-weight: 800;
-            z-index: 1001;
+            z-index: 1002;
             box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
             border: 3px solid #feca57;
             transform: rotate(-3deg);
             animation: bounce 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        header.compact + * .option-badge,
+        body.scrolled .option-badge {
+            top: 50px;
+            transform: scale(0.7) rotate(-3deg);
         }
 
         /* Fun floating elements */
@@ -839,7 +1073,7 @@
         <div class="floating-element">🖱️</div>
     </div>
 
-    <div class="option-badge">OPTION 5C</div>
+    <div class="option-badge">OPTION 5D</div>
 
     <!-- Header -->
     <header>
@@ -852,8 +1086,29 @@
                 <li><a href="#practical">Info</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-backdrop"></div>
+    <div class="mobile-menu">
+        <button class="close-menu">&times;</button>
+        <div class="tech-header">Navigation</div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#why-different">Why & What</a>
+        <a href="#practical">Info</a>
+        <a href="#contact">Contact</a>
+        <div class="menu-logo">
+            <img src="assets/images/logo.png" alt="JustClick Logo">
+            <div class="logo-text">JustClick<br><span>Educational Technology</span></div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -1001,8 +1256,8 @@
                     <p><strong>Educational Specialist</strong></p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo"><img src="assets/images/random-ai-photo.jpg" alt="Sonja Hogenboezem" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
-                    <h3>Susan Hogenboezem</h3>
+                    <div class="team-photo"><img src="assets/images/random-ai-photo.jpg" alt="Sonja Joubert" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                    <h3>Sonja Joubert</h3>
                     <p><strong>Educator</strong></p>
                 </div>
             </div>
@@ -1163,19 +1418,42 @@
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run once on load
 
-        // Logo hide/show on scroll
-        function handleLogoScroll() {
-            const logo = document.querySelector('.logo');
+        // Header compact on scroll
+        function handleHeaderScroll() {
+            const header = document.querySelector('header');
+            const body = document.body;
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             if (scrollTop > 100) {
-                logo.classList.add('hidden');
+                header.classList.add('compact');
+                body.classList.add('scrolled');
             } else {
-                logo.classList.remove('hidden');
+                header.classList.remove('compact');
+                body.classList.remove('scrolled');
             }
         }
 
-        window.addEventListener('scroll', handleLogoScroll);
+        window.addEventListener('scroll', handleHeaderScroll);
+
+        // Hamburger menu functionality
+        function openMenu() {
+            document.querySelector('.mobile-menu').classList.add('active');
+            document.querySelector('.menu-backdrop').classList.add('active');
+        }
+
+        function closeMenu() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+            document.querySelector('.menu-backdrop').classList.remove('active');
+        }
+
+        document.querySelector('.hamburger').addEventListener('click', openMenu);
+        document.querySelector('.close-menu').addEventListener('click', closeMenu);
+        document.querySelector('.menu-backdrop').addEventListener('click', closeMenu);
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
     </script>
 </body>
 </html>
