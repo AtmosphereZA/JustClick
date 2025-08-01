@@ -1126,6 +1126,14 @@
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
             border-top: 3px solid #feca57;
             backdrop-filter: blur(8px);
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .sponsor-footer.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .sponsor-scroll {
@@ -1133,19 +1141,32 @@
             animation: scroll-left 40s linear infinite;
         }
 
+        .sponsor-scroll a {
+            display: inline-block;
+            margin: 0 40px;
+            vertical-align: middle;
+            transition: all 0.3s ease;
+        }
+
         .sponsor-scroll img {
             height: 50px; /* Adjust height as needed */
-            margin: 0 40px;
             vertical-align: middle;
             filter: grayscale(100%);
             opacity: 0.7;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .sponsor-scroll img:hover {
+        .sponsor-scroll a:hover img {
             filter: grayscale(0%);
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(1.5);
+            z-index: 1004;
+            position: relative;
+        }
+
+        .sponsor-scroll a:hover {
+            z-index: 1004;
         }
 
         @keyframes scroll-left {
@@ -1353,7 +1374,7 @@
                     <p><strong>Educational Specialist</strong></p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo"><img src="assets/images/sonja-photo.jpg" alt="Sonja Joubert" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                    <div class="team-photo"><img src="assets/images/random-ai-photo.jpg" alt="Sonja Joubert" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Sonja Joubert</h3>
                     <p><strong>Educator</strong></p>
                 </div>
@@ -1541,6 +1562,24 @@
         }
 
         window.addEventListener('scroll', handleHeaderScroll);
+        window.addEventListener('scroll', handleSponsorFooter);
+
+        // Handle sponsor footer visibility on scroll
+        function handleSponsorFooter() {
+            const footer = document.querySelector('.sponsor-footer');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show sponsor footer when user scrolls past 30% of the page
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            
+            if (scrollPercentage > 30) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        }
 
         // Hamburger menu functionality
         function openMenu() {
@@ -1575,8 +1614,16 @@
             const sponsorContainer = document.querySelector('.sponsor-scroll');
             let sponsorHTML = '';
 
+            const sponsorLinks = {
+                "bigtree.jpg": "https://bigtreetherapy.co.za/",
+                "charisemeistre.jpg": "https://www.facebook.com/groups/999588490084153/",
+                "germcure.jpg": "https://germcure.co.za/",
+                "jetline.jpg": "https://www.jetline.co.za/"
+            };
+
             sponsors.forEach(sponsorFile => {
-                sponsorHTML += `<img src="assets/sponsors/${sponsorFile}" alt="Sponsor Logo">`;
+                const link = sponsorLinks[sponsorFile] || "#";
+                sponsorHTML += `<a href="${link}" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/${sponsorFile}" alt="Sponsor Logo"></a>`;
             });
 
             // Set the HTML for both scrolling containers to create a seamless loop
