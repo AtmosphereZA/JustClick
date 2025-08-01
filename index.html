@@ -1,4 +1,4 @@
-/* Version 2508015D */
+/* Version 2508015E */
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustClick Option 5D - Professional Content</title>
+    <title>JustClick | Perceptual Stimulation | Pretoria</title>
    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -60,7 +60,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -75,9 +75,10 @@
         header.compact {
             padding: 0;
             border-bottom: 1px solid #feca57;
-            box-shadow: 0 1px 5px rgba(255, 107, 107, 0.1);
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9) 0%, rgba(78, 205, 196, 0.9) 50%, rgba(69, 183, 209, 0.9) 100%);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.8) 0%, rgba(254, 202, 87, 0.8) 25%, rgba(78, 205, 196, 0.8) 50%, rgba(55, 66, 250, 0.8) 75%, rgba(255, 107, 107, 0.8) 100%);
             height: 40px;
+            backdrop-filter: blur(10px);
         }
 
         header.compact .container {
@@ -373,8 +374,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
-            padding: 200px 0 100px;
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
+            padding: 150px 0 100px;
             text-align: center;
             color: white;
             position: relative;
@@ -908,7 +909,7 @@
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #feca57 100%);
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
             color: white;
             text-align: center;
             position: relative;
@@ -1094,12 +1095,21 @@
             100% { transform: translateY(-100px) rotate(360deg); }
         }
 
+        .floating-element img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
         .floating-element:nth-child(1) { left: 10%; animation-delay: 0s; }
         .floating-element:nth-child(2) { left: 20%; animation-delay: 2s; }
         .floating-element:nth-child(3) { left: 30%; animation-delay: 4s; }
         .floating-element:nth-child(4) { left: 70%; animation-delay: 1s; }
         .floating-element:nth-child(5) { left: 80%; animation-delay: 3s; }
         .floating-element:nth-child(6) { left: 90%; animation-delay: 5s; }
+        .floating-element:nth-child(7) { left: 50%; animation-delay: 6s; }
+        .floating-element:nth-child(8) { left: 60%; animation-delay: 1.5s; }
     </style>
 </head>
 <body>
@@ -1110,9 +1120,11 @@
         <div class="floating-element">🖨️</div>
         <div class="floating-element">🧩</div>
         <div class="floating-element">🖱️</div>
+        <div class="floating-element"><img src="/assets/images/bgstar.jpeg" alt="Star"></div>
+        <div class="floating-element"><img src="/assets/images/bgmouse.jpeg" alt="Mouse"></div>
     </div>
 
-    <div class="option-badge">OPTION 5D</div>
+
 
     <!-- Header -->
     <header>
