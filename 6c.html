@@ -1,0 +1,1678 @@
+/* Version 2508016A */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0D94632F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JM0D94632F');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustClick | Perceptual Stimulation | Pretoria</title>
+   
+<!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://atmosphereza.github.io/JustClick/favicon.ico">
+    <link rel="icon" type="image/png" href="https://atmosphereza.github.io/JustClick/favicon.png">
+    <link rel="apple-touch-icon" href="https://atmosphereza.github.io/JustClick/favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE','Bradley Hand', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #1a1a1a;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(254, 202, 87, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            border-bottom: 5px solid #feca57;
+            transition: all 0.3s ease;
+        }
+
+        header.compact {
+            padding: 0;
+            border-bottom: 1px solid #feca57;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.8) 0%, rgba(254, 202, 87, 0.8) 25%, rgba(78, 205, 196, 0.8) 50%, rgba(55, 66, 250, 0.8) 75%, rgba(255, 107, 107, 0.8) 100%);
+            height: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        header.compact .container {
+            padding: 0 20px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        header.compact .hamburger {
+            padding: 8px;
+            transform: scale(0.8);
+        }
+
+        header.compact .hamburger span {
+            width: 40px;
+            height: 4px;
+            margin: 4px 0;
+            background: #ff6b6b;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 15px;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            width: 50px;
+            height: 6px;
+            background: #ff6b6b;
+            margin: 6px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+        }
+
+        .hamburger:hover span {
+            background: #ff4757;
+            box-shadow: 0 3px 8px rgba(255, 107, 107, 0.5);
+        }
+
+        header.compact .nav-links {
+            display: none;
+        }
+
+        header.compact .hamburger {
+            display: flex !important;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 320px;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
+            z-index: 1001;
+            padding: 80px 20px 20px;
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 5px solid #feca57;
+            box-shadow: -10px 0 30px rgba(255, 107, 107, 0.4);
+            backdrop-filter: blur(15px);
+        }
+
+        .mobile-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fun-nav" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="3" fill="rgba(255,255,255,0.1)"/><polygon points="8,8 10,11 8,14 6,11" fill="rgba(254,202,87,0.15)"/><rect x="18" y="18" width="3" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23fun-nav)"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .tech-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+        }
+
+        .tech-header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #feca57, transparent);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 800;
+            margin: 0.6rem 0;
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transform: rotate(1deg);
+        }
+
+        .mobile-menu a::before {
+            content: '';
+            background-image: url('assets/images/mousemenu.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: #feca57;
+            border-color: white;
+            color: #333;
+            transform: rotate(0deg) translateX(10px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(254, 202, 87, 0.4);
+        }
+
+        .mobile-menu a:hover::before {
+            transform: scale(1.3) rotate(10deg);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: rotate(-5deg);
+        }
+
+        .close-menu:hover {
+            background: #ff6b6b;
+            border-color: white;
+            color: white;
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-logo {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transform: rotate(-1deg);
+        }
+
+        .menu-logo img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 15px;
+            background: white;
+            padding: 8px;
+            border: 3px solid #feca57;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            color: white;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text span {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo {
+            height: 120px;
+            width: auto;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #ff6b6b;
+            font-size: 1rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #feca57;
+            transform: rotate(-2deg);
+            transition: all 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+
+        
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            background: #feca57;
+            color: #333;
+            border-color: white;
+            transform: translateY(-2px) rotate(1deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
+            padding: 160px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fun" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="3" fill="rgba(255,255,255,0.1)"/><polygon points="5,5 7,8 5,11 3,8" fill="rgba(254,202,87,0.1)"/><rect x="15" y="15" width="3" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23fun)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: rotate(-1deg) translateY(0); }
+            40% { transform: rotate(-1deg) translateY(-10px); }
+            60% { transform: rotate(-1deg) translateY(-5px); }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .outcomes {
+            margin-top: 2rem;
+            text-align: left;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .outcomes h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #feca57;
+            text-align: center;
+        }
+
+        .hero .outcomes ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .hero .outcomes li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .hero .outcomes li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #feca57;
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #feca57, #ff9ff3, #54a0ff, #5f27cd);
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            border: 4px solid white;
+            transform: rotate(1deg);
+        }
+
+        .cta-button:hover {
+            transform: rotate(-1deg) scale(1.1) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Learning Areas */
+        .learning-areas {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .learning-areas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="7.5" cy="7.5" r="2" fill="rgba(255,107,107,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .area-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(1deg);
+        }
+
+        .area-card:nth-child(even) {
+            transform: rotate(-1deg);
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #feca57, #ff9ff3);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
+        }
+
+        .area-card:hover::before {
+            opacity: 1;
+        }
+
+        .area-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .area-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .area-card p {
+            color: #666;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .area-card ul {
+            text-align: left;
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .area-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .area-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><polygon points="10,2 12,7 17,7 13,10 15,15 10,12 5,15 7,10 3,7 8,7" fill="rgba(78,205,196,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: #fff;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content h3 {
+            color: #feca57;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            padding-left: 3rem;
+            position: relative;
+            color: #e0e0e0;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 0.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #4ecdc4;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .features-list li::before {
+            content: '🌟';
+            position: absolute;
+            left: 10px;
+            font-size: 1.5rem;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #feca57);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+            transform: rotate(2deg);
+            border: 5px solid white;
+        }
+
+        .about-visual h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .team::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M12.5,20 C12.5,15 8,10 4,15 C0,10 -4.5,15 -4.5,20 C-4.5,25 12.5,35 12.5,35 C12.5,35 29.5,25 29.5,20 C29.5,15 25,10 21,15 C17,10 12.5,15 12.5,20 Z" fill="rgba(254,202,87,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+            opacity: 0.2;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 4px solid #4ecdc4;
+            transform: rotate(1deg);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .team-card:nth-child(even) {
+            transform: rotate(-1deg);
+            border-color: #feca57;
+        }
+
+        .team-card:nth-child(3) {
+            border-color: #ff9ff3;
+        }
+
+        .team-card:nth-child(4) {
+            border-color: #54a0ff;
+        }
+
+        .team-card::before {
+            content: '⭐';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .team-card:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+            border: 5px solid #4ecdc4;
+            background: linear-gradient(45deg, #fff3e0, #e8f5e8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card:nth-child(1) .team-photo {
+            border-color: #ff6b6b;
+        }
+
+        .team-card:nth-child(2) .team-photo {
+            border-color: #feca57;
+        }
+
+        .team-card:nth-child(3) .team-photo {
+            border-color: #ff9ff3;
+        }
+
+        .team-card:nth-child(4) .team-photo {
+            border-color: #54a0ff;
+        }
+
+        .team-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .team-card p {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .why-different::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="rockets" width="30" height="30" patternUnits="userSpaceOnUse"><text x="15" y="20" font-size="16" text-anchor="middle" fill="rgba(255,107,107,0.1)">🚀</text></pattern></defs><rect width="100" height="100" fill="url(%23rockets)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .why-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-content h2 {
+            color: #fff;
+            text-align: center;
+            font-weight: 900;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-content p {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-content h3 {
+            color: #feca57;
+            margin: 2rem 0 1rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #feca57);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+            border: 5px solid white;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '🚀';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="25" height="25" patternUnits="userSpaceOnUse"><polygon points="12.5,2 15.3,8.8 22.5,8.8 16.6,13.4 19.4,20.2 12.5,15.6 5.6,20.2 8.4,13.4 2.5,8.8 9.7,8.8" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.2;
+        }
+
+        .contact h2 {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 3rem auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 4px solid white;
+            border-radius: 20px;
+            font-size: 1rem;
+            background: white;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #feca57;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex !important;
+                transform: scale(0.75);
+            }
+
+            header {
+                padding: 0.5rem 0;
+            }
+
+            header.compact {
+                padding: 0.2rem 0;
+                height: 50px;
+            }
+
+            header.compact .hamburger {
+                transform: scale(0.6);
+            }
+
+            .hero {
+                padding: 180px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .option-badge {
+                top: 80px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Option Number */
+        .option-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            font-weight: 800;
+            z-index: 1002;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+            border: 3px solid #feca57;
+            transform: rotate(-3deg);
+            animation: bounce 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        header.compact + * .option-badge,
+        body.scrolled .option-badge {
+            top: 50px;
+            transform: scale(0.7) rotate(-3deg);
+        }
+
+        /* Fun floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .floating-element img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .floating-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { left: 70%; animation-delay: 1s; }
+        .floating-element:nth-child(5) { left: 80%; animation-delay: 3s; }
+        .floating-element:nth-child(6) { left: 90%; animation-delay: 5s; }
+        .floating-element:nth-child(7) { left: 50%; animation-delay: 6s; }
+        .floating-element:nth-child(8) { left: 60%; animation-delay: 1.5s; }
+
+        /* Sponsor Footer Styles */
+        .sponsor-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            z-index: 999; /* Below mobile menu and header */
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #feca57;
+            backdrop-filter: blur(8px);
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .sponsor-footer.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .sponsor-scroll {
+            display: inline-block;
+            animation: scroll-left 40s linear infinite;
+        }
+
+        .sponsor-scroll a {
+            display: inline-block;
+            margin: 0 40px;
+            vertical-align: middle;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-scroll img {
+            height: 50px; /* Adjust height as needed */
+            vertical-align: middle;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sponsor-scroll a:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.5);
+            z-index: 1004;
+            position: relative;
+        }
+
+        .sponsor-scroll a:hover {
+            z-index: 1004;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">🎈</div>
+        <div class="floating-element">⭐</div>
+        <div class="floating-element">🖥️</div>
+        <div class="floating-element">🖨️</div>
+        <div class="floating-element">🧩</div>
+        <div class="floating-element">🖱️</div>
+        <div class="floating-element"><img src="assets/images/bgstar.png" alt="Star"></div>
+        <div class="floating-element"><img src="assets/images/bgmouse.png" alt="Mouse"></div>
+    </div>
+
+
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="assets/images/logo.png" alt="JustClick Logo" style="height: 100px; width: auto;"></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-different">Why & What</a></li>
+                <li><a href="#practical">Info</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-backdrop"></div>
+    <div class="mobile-menu">
+        <button class="close-menu">&times;</button>
+        <div class="tech-header">Navigation</div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#why-different">Why & What</a>
+        <a href="#practical">Info</a>
+        <a href="#contact">Contact</a>
+        <div class="menu-logo">
+            <img src="assets/images/logo.png" alt="JustClick Logo">
+            <div class="logo-text">JustClick<br><span>Educational Technology</span></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>JustClick OFFERS PERCEPTUAL STIMULATION WITH A TWIST!</h1>
+                <p>JustClick uses technology (laptops and tablets) to develop perceptual skills in children to help them reach their full potential required for school readiness.</p>
+                
+                <div class="outcomes">
+                    <h3>The outcomes will be:</h3>
+                    <ul>
+                        <li>Children that are intellectually, emotionally, and technologically well equipped</li>
+                        <li>Children who will grow up to contribute positively to the social and economic prosperity of the community</li>
+                    </ul>
+                    
+                    <p style="text-align: center; margin-top: 2rem;"><strong>50 different skills are continually developed and evaluated:</strong></p>
+                    <ul>
+                        <li>in a positive manner</li>
+                        <li>in a relaxed atmosphere</li>
+                        <li>in the known surroundings of their school</li>
+                        <li>to ensure that minor or serious developmental problems are identified and addressed timeously e.g. poor concentration / low muscle tone/crossing of the midline</li>
+                        <li>to encourage learners with a high learning capacity to develop a higher standard and to further their potential</li>
+                    </ul>
+                </div>
+                
+                <a href="#contact" class="cta-button">Apply for 2025</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Areas -->
+    <section class="learning-areas">
+        <div class="container">
+            <h2 class="section-title">Skills We Develop</h2>
+            <div class="areas-grid">
+                <div class="area-card fade-in">
+                    <div class="area-icon">🧠</div>
+                    <h3>Intellectual Skills</h3>
+                    <ul>
+                        <li>Perceptual (essential for school readiness)</li>
+                        <li>Number concept (mathematics)</li>
+                        <li>Logical thinking</li>
+                        <li>Memory skills</li>
+                        <li>Creativity</li>
+                    </ul>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">😊</div>
+                    <h3>Emotional Skills</h3>
+                    <ul>
+                        <li>Self-confidence</li>
+                        <li>Self-image</li>
+                        <li>Daring attitude</li>
+                        <li>Planning</li>
+                        <li>Co-operation</li>
+                        <li>Goal setting</li>
+                        <li>Enthusiasm</li>
+                    </ul>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🎯</div>
+                    <h3>Task Orientation</h3>
+                    <ul>
+                        <li>Concentration</li>
+                        <li>Independent work</li>
+                        <li>Perseverance</li>
+                        <li>Task completion</li>
+                        <li>Decision-making</li>
+                        <li>Problem-solving</li>
+                        <li>Observation of fine detail</li>
+                    </ul>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">💻</div>
+                    <h3>Technology</h3>
+                    <ul>
+                        <li>Using laptops and tablets to enhance perceptual skills</li>
+                        <li>Age-appropriate computer skills (established through incidental learning)</li>
+                        <li>Offline coding and robotics software</li>
+                    </ul>
+                </div>
+                <div class="area-card fade-in">
+                    <div class="area-icon">🔄</div>
+                    <h3>Computational Thinking</h3>
+                    <ul>
+                        <li>Ordering steps in a sequence or patterns (algorithms)</li>
+                        <li>Breaking down a large task (decomposition/modularity)</li>
+                        <li>Making decisions based on conditions/logical sequence of events (control structures)</li>
+                        <li>Fixing problems in programs (debugging)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>About JustClick</h2>
+                    <p>For the past 20 years JustClick has been active in more than 45 schools and nursery schools in the east of Pretoria.</p>
+                    
+                    <h3>JustClick offers:</h3>
+                    <ul class="features-list">
+                        <li>unique perceptual stimulation for pre-schoolers between the ages of three and six years, using laptops and tablets as educational tools</li>
+                        <li>a new and exciting program every week (updated and changed annually)</li>
+                        <li>individual attention in an encouraging and challenging atmosphere (only five learners per class)</li>
+                        <li>age-appropriate software</li>
+                        <li>uniquely prepared graded lesson plans and differentiated programs</li>
+                        <li>weekly evaluation according to occupational therapist standards</li>
+                        <li>early detection of possible problems e.g. poor concentration / low muscle tone / crossing the midline</li>
+                        <li>three comprehensive reports per year</li>
+                        <li>regular feedback to teachers</li>
+                        <li>affordable fees</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>Our Mission</h3>
+                    <p>JustClick teachers are handpicked and passionate about their work. We strive to develop each toddler in a positive way by ensuring that each lesson is an unforgettable experience. We emphasise each child's uniqueness and individuality.</p>
+                    <p>When necessary, support is provided by professional speech, occupational and play therapists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">The JustClick Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo"><img src="assets/images/rina-photo.jpg" alt="Rina Reinecke" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                    <h3>Rina Reinecke</h3>
+                    <p><strong>Founder & Owner</strong></p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo"><img src="assets/images/alida-photo.jpg" alt="Alida vd Kruk" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                    <h3>Alida vd Kruk</h3>
+                    <p><strong>Senior Educator</strong></p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo"><img src="assets/images/nadia-photo.jpg" alt="Nadia Scholtz" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                    <h3>Nadia Scholtz</h3>
+                    <p><strong>Educational Specialist</strong></p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo"><img src="assets/images/random-ai-photo.jpg" alt="Sonja Joubert" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                    <h3>Sonja Joubert</h3>
+                    <p><strong>Educator</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section id="why-different" class="why-different">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="section-title">Why is JustClick Different?</h2>
+                <p><strong>Technology is here to stay, and it is not just educational – it is FUN too!</strong></p>
+                
+                <h3>At JustClick we use laptops and tablets:</h3>
+                <ul class="features-list">
+                    <li>Devices are used primarily to instil fundamental skills that will later enhance reading and maths skills</li>
+                    <li>Skills are developed incidentally in the learning programme</li>
+                    <li>All programmes and lessons are age-specific, planned in detail, educational, and the results are measurable</li>
+                    <li>Computers and tablets are used as educational apparatus and form part of the toddler's journey of discovery</li>
+                    <li>Guidance is lovingly and attentively provided by a knowledgeable presenter</li>
+                    <li>We lay-down the foundation for Robotics</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h3>What is S.T.E.M education?</h3>
+                    <p>STEM education stands for Science, Technology, Engineering, and Mathematics. It emphasises the integration of these disciplines to provide a holistic and interdisciplinary approach to learning.</p>
+                    <p>It promotes hands-on, experiential learning and encourages inquiry-based methods. Students engage in real-world problem-solving, fostering critical thinking and creativity.</p>
+                    <p>Overall, STEM education not only develops Critical Thinking and Problem-Solving Skills, it provides a foundation for students to thrive in a technologically advanced and rapidly changing world.</p>
+                </div>
+
+                <h3>When do Computers and tablets become detrimental?</h3>
+                <ul class="features-list">
+                    <li>when the above-mentioned are not adhered to and using the electronic device simply becomes a pleasurable pastime</li>
+                    <li>when toddlers are allowed to repeatedly play the same games at home or even at school and they become intellectually and emotionally lazy</li>
+                    <li>when toddlers spend more than 30 minutes per day on the computer or tablet</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information Section -->
+    <section id="practical" class="about">
+        <div class="container">
+            <h2 class="section-title">Practical Information</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Who may enroll?</h3>
+                    <ul class="features-list">
+                        <li>children between the ages of three and six years may enroll (transition from the two-dimensional to the three-dimensional phase)</li>
+                        <li>children in need of remedial support may enroll</li>
+                        <li>fast learners who need extra stimulation may enroll</li>
+                    </ul>
+
+                    <h3>How does it work?</h3>
+                    <ul class="features-list">
+                        <li>30-minutes lessons are presented in the familiar school environment</li>
+                        <li>bilingual classes (Afrikaans and English) are presented</li>
+                        <li>all laptops and tablets (provided by JustClick) are available</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <h3>Important Note</h3>
+                    <p>To ensure whole-brain development, mental stimulation is very important during the first seven years of a child's life as all skills (intellectual, emotional, and technological) needed for mathematics, reading, and writing, are embedded during this period.</p>
+                    
+                    <h3>Key Terms:</h3>
+                    <p><strong>Low Muscle Tone:</strong> Poor muscle tone affects posture, movement accuracy, and can lead to developmental delays, untidy handwriting, and concentration difficulties.</p>
+                    <p><strong>Crossing the Mid-line:</strong> The ability to reach across the body's center line, essential for writing patterns and motor skill development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Apply for 2025</h2>
+            <p>Contact us to enroll your child in our perceptual development program</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Child's Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="3" max="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="school">School/Nursery</label>
+                    <input type="text" id="school" name="school">
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Any specific needs or developmental concerns?"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit Application</button>
+            </div>
+
+            <div style="margin-top: 3rem; font-size: 1.2rem; position: relative; z-index: 2;">
+                <p><strong>2025 Fees:</strong></p>
+                <p>Registration: R150</p>
+                <p>3 Months: R840</p>
+                <p style="margin-top: 1rem; font-size: 1rem;">Contact: info@jclick.co.za | Pretoria, South Africa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Footer -->
+    <footer class="sponsor-footer">
+        <div class="sponsor-scroll">
+            <!-- Sponsor logos will be dynamically inserted here by JavaScript -->
+        </div>
+        <div class="sponsor-scroll">
+            <!-- This is a duplicate for a seamless loop -->
+        </div>
+    </footer>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will contact you soon to discuss enrollment details.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animations
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+
+        // Header compact on scroll
+        function handleHeaderScroll() {
+            const header = document.querySelector('header');
+            const body = document.body;
+            const logo = document.querySelector('.logo');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Gradual logo fade based on scroll position
+            const fadeStart = 50;
+            const fadeEnd = 150;
+            let opacity = 1;
+            let scale = 1;
+            
+            if (scrollTop >= fadeStart) {
+                const fadeProgress = Math.min((scrollTop - fadeStart) / (fadeEnd - fadeStart), 1);
+                opacity = 1 - fadeProgress;
+                scale = 1 - (fadeProgress * 0.4); // Scale from 1 to 0.6
+                
+                if (scrollTop > 100) {
+                    header.classList.add('compact');
+                    body.classList.add('scrolled');
+                } else {
+                    header.classList.remove('compact');
+                    body.classList.remove('scrolled');
+                }
+                
+                // Apply gradual fade
+                logo.style.opacity = opacity;
+                logo.style.transform = `rotate(-2deg) scale(${scale})`;
+                
+                if (opacity <= 0) {
+                    logo.style.pointerEvents = 'none';
+                } else {
+                    logo.style.pointerEvents = 'auto';
+                }
+            } else {
+                header.classList.remove('compact');
+                body.classList.remove('scrolled');
+                logo.style.opacity = '1';
+                logo.style.transform = 'rotate(-2deg) scale(1)';
+                logo.style.pointerEvents = 'auto';
+            }
+        }
+
+        window.addEventListener('scroll', handleHeaderScroll);
+        window.addEventListener('scroll', handleSponsorFooter);
+
+        // Handle sponsor footer visibility on scroll
+        function handleSponsorFooter() {
+            const footer = document.querySelector('.sponsor-footer');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show sponsor footer when user scrolls past 30% of the page
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            
+            if (scrollPercentage > 30) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        }
+
+        // Hamburger menu functionality
+        function openMenu() {
+            document.querySelector('.mobile-menu').classList.add('active');
+            document.querySelector('.menu-backdrop').classList.add('active');
+        }
+
+        function closeMenu() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+            document.querySelector('.menu-backdrop').classList.remove('active');
+        }
+
+        document.querySelector('.hamburger').addEventListener('click', openMenu);
+        document.querySelector('.close-menu').addEventListener('click', closeMenu);
+        document.querySelector('.menu-backdrop').addEventListener('click', closeMenu);
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Sponsor Scroller
+        document.addEventListener('DOMContentLoaded', function() {
+            const sponsors = [
+                "bigtree.jpg",
+                "charisemeistre.jpg",
+                "germcure.jpg",
+                "jetline.jpg"
+                // Add more sponsor image filenames here
+            ];
+
+            const sponsorContainer = document.querySelector('.sponsor-scroll');
+            let sponsorHTML = '';
+
+            const sponsorLinks = {
+                "bigtree.jpg": "https://bigtreetherapy.co.za/",
+                "charisemeistre.jpg": "https://www.facebook.com/groups/999588490084153/",
+                "germcure.jpg": "https://germcure.co.za/",
+                "jetline.jpg": "https://www.jetline.co.za/"
+            };
+
+            sponsors.forEach(sponsorFile => {
+                const link = sponsorLinks[sponsorFile] || "#";
+                sponsorHTML += `<a href="${link}" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/${sponsorFile}" alt="Sponsor Logo"></a>`;
+            });
+
+            // Set the HTML for both scrolling containers to create a seamless loop
+            document.querySelectorAll('.sponsor-scroll').forEach(container => {
+                container.innerHTML = sponsorHTML;
+            });
+        });
+    </script>
+</body>
+</html>
