@@ -389,19 +389,35 @@
             100% { transform: translateY(-100px) rotate(360deg); }
         }
 
-        .floating-element:nth-child(1) { left: 20%; animation-delay: 2s; }
-        .floating-element:nth-child(2) { left: 40%; animation-delay: 5s; }
-        .floating-element:nth-child(3) { left: 60%; animation-delay: 3s; }
-        .floating-element:nth-child(4) { left: 80%; animation-delay: 6s; }
+        .floating-element img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .floating-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { left: 70%; animation-delay: 1s; }
+        .floating-element:nth-child(5) { left: 80%; animation-delay: 3s; }
+        .floating-element:nth-child(6) { left: 90%; animation-delay: 5s; }
+        .floating-element:nth-child(7) { left: 50%; animation-delay: 6s; }
+        .floating-element:nth-child(8) { left: 60%; animation-delay: 1.5s; }
     </style>
 </head>
 <body>
     <div class="floating-elements">
         <div class="floating-element">🎈</div>
-        <div class="floating-element">🌈</div>
         <div class="floating-element">⭐</div>
-        <div class="floating-element">🎪</div>
+        <div class="floating-element">🖥️</div>
+        <div class="floating-element">🖨️</div>
+        <div class="floating-element">🧩</div>
+        <div class="floating-element">🖱️</div>
+        <div class="floating-element"><img src="assets/images/bgstar.png" alt="Star"></div>
+        <div class="floating-element"><img src="assets/images/bgmouse.png" alt="Mouse"></div>
     </div>
+
 
     <div class="card-container">
         <div class="card-header">
