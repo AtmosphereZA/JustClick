@@ -1,3 +1,5 @@
+/* Version 2508015D */
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -372,7 +374,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
-            padding: 150px 0 100px;
+            padding: 200px 0 100px;
             text-align: center;
             color: white;
             position: relative;
@@ -983,6 +985,7 @@
 
             .hamburger {
                 display: flex !important;
+                transform: scale(0.75);
             }
 
             header {
@@ -994,8 +997,12 @@
                 height: 50px;
             }
 
+            header.compact .hamburger {
+                transform: scale(0.6);
+            }
+
             .hero {
-                padding: 120px 0 80px;
+                padding: 180px 0 80px;
             }
 
             .hero h1 {
