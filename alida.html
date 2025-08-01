@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0D94632F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JM0D94632F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alida vd Kruk | JustClick Educational Technology</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #feca57 0%, #ff9ff3 25%, #3742fa 50%, #4ecdc4 75%, #ff6b6b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fun" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="3" fill="rgba(255,255,255,0.1)"/><polygon points="5,5 7,8 5,11 3,8" fill="rgba(254,202,87,0.1)"/><rect x="15" y="15" width="3" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23fun)"/></svg>');
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .card-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 5px solid #feca57;
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-container:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #feca57 0%, #ff9ff3 25%, #3742fa 50%, #4ecdc4 75%, #ff6b6b 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="25" height="25" patternUnits="userSpaceOnUse"><polygon points="12.5,2 15.3,8.8 22.5,8.8 16.6,13.4 19.4,20.2 12.5,15.6 5.6,20.2 8.4,13.4 2.5,8.8 9.7,8.8" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .profile-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #feca57;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #feca57;
+            z-index: 2;
+        }
+
+        .logo-icon img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tagline {
+            font-style: italic;
+            font-size: 16px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 3px solid #feca57;
+            background-color: white;
+        }
+        
+        .action-btn {
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .action-btn:first-child {
+            border-right: 3px solid #feca57;
+        }
+        
+        .action-btn i {
+            font-size: 28px;
+            color: #ff9ff3;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            background: linear-gradient(45deg, rgba(254, 202, 87, 0.1), rgba(255, 159, 243, 0.1));
+            transform: translateY(-2px);
+        }
+
+        .action-btn:hover i {
+            color: #feca57;
+            transform: scale(1.1);
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .company-section {
+            background: linear-gradient(135deg, rgba(254, 202, 87, 0.1), rgba(255, 159, 243, 0.1));
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 3px solid #feca57;
+            position: relative;
+        }
+
+        .company-section::before {
+            content: '🎨';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+        
+        .company-name {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            color: #ff9ff3;
+            text-transform: uppercase;
+        }
+        
+        .company-desc {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+        
+        .info-section {
+            margin-bottom: 25px;
+        }
+        
+        .card-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            padding: 15px;
+            background: rgba(254, 202, 87, 0.05);
+            border-radius: 15px;
+            border-left: 5px solid #feca57;
+            transition: all 0.3s ease;
+        }
+
+        .card-info:hover {
+            background: rgba(254, 202, 87, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .info-icon {
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #ff9ff3;
+            font-size: 20px;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+        
+        a.info-value:hover {
+            color: #ff9ff3;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 0;
+            border-top: 3px solid #feca57;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #feca57, #ff9ff3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            border: 3px solid white;
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(45deg, #3742fa, #4ecdc4);
+            transform: translateY(-5px) rotate(-5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .website-btn {
+            display: block;
+            background: linear-gradient(45deg, #feca57, #ff9ff3, #3742fa, #4ecdc4);
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .website-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .add-contact-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #feca57, #ff9ff3);
+            color: white;
+            padding: 18px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 25px auto 0;
+            font-weight: 800;
+            font-size: 16px;
+            transition: all 0.3s;
+            width: fit-content;
+            gap: 12px;
+            text-transform: uppercase;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(254, 202, 87, 0.3);
+        }
+        
+        .add-contact-btn:hover {
+            background: linear-gradient(45deg, #3742fa, #4ecdc4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(254, 202, 87, 0.4);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: float 12s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .floating-element:nth-child(1) { left: 25%; animation-delay: 3s; }
+        .floating-element:nth-child(2) { left: 45%; animation-delay: 6s; }
+        .floating-element:nth-child(3) { left: 65%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { left: 75%; animation-delay: 7s; }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">📖</div>
+        <div class="floating-element">🎯</div>
+        <div class="floating-element">💡</div>
+        <div class="floating-element">🏆</div>
+    </div>
+
+    <div class="card-container">
+        <div class="card-header">
+            <a href="assets/qr/alidaqr.png" target="_blank">
+                <div class="logo-icon">
+                    <img src="assets/images/logo.png" alt="JustClick Logo">
+                </div>
+            </a>
+            <div class="profile-circle">
+                <img src="assets/images/alida-photo.jpg" alt="Alida vd Kruk" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ff9ff3; font-size: 36px;\'><i class=\'fas fa-user\'></i></div>'">
+            </div>
+            <h1 class="name">Alida vd Kruk</h1>
+            <p class="title">Senior Educator</p>
+            <p class="tagline">Age-Appropriate Educational Programs</p>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="tel:+27832945983" class="action-btn">
+                <i class="fas fa-phone"></i>
+                <span>Call</span>
+            </a>
+            <a href="mailto:alida@jclick.co.za" class="action-btn">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+        
+        <div class="card-body">
+            <div class="company-section">
+                <h3 class="company-name">JustClick Educational Technology</h3>
+                <p class="company-desc">Senior educator specializing in age-appropriate educational programs and perceptual skill development. Expert in creating engaging weekly programs that are updated and changed annually to maintain freshness and effectiveness.</p>
+            </div>
+            
+            <div class="info-section">
+                <div class="card-info">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Mobile</div>
+                        <a href="tel:+27832945983" class="info-value">083 294 5983</a>
+                    </div>
+                </div>
+                
+                <div class="card-info">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Email</div>
+                        <a href="mailto:alida@jclick.co.za" class="info-value">alida@jclick.co.za</a>
+                    </div>
+                </div>
+                
+                <div class="card-info">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Location</div>
+                        <div class="info-value">Pretoria, South Africa</div>
+                    </div>
+                </div>
+                
+                <div class="card-info">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Programs</div>
+                        <div class="info-value">New Weekly Programs, Age-Specific Content</div>
+                    </div>
+                </div>
+                
+                <div class="card-info">
+                    <div class="info-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Specialties</div>
+                        <div class="info-value">Perceptual Skills, Educational Software, Program Development</div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="alida-vcard.vcf" download class="add-contact-btn">
+                <i class="fas fa-user-plus"></i> Add to Contacts
+            </a>
+        </div>
+        
+        <div class="social-links">
+            <a href="mailto:alida@jclick.co.za" class="social-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+27832945983" class="social-link">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+        
+        <a href="https://www.jclick.co.za" class="website-btn">
+            <i class="fas fa-globe"></i> Visit JustClick Website
+        </a>
+    </div>
+
+    <script>
+        // Create a VCard file for download
+        document.addEventListener('DOMContentLoaded', function() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Alida vd Kruk
+N:vd Kruk;Alida;;;
+ORG:JustClick Educational Technology
+TITLE:Senior Educator
+TEL;TYPE=CELL:+27832945983
+EMAIL:alida@jclick.co.za
+URL:https://www.jclick.co.za
+ADR;TYPE=WORK:;;Pretoria;South Africa;;;;
+NOTE:Senior Educator specializing in age-appropriate educational programs and perceptual skill development.
+END:VCARD`;
+
+            const vcardBlob = new Blob([vcard], { type: 'text/vcard' });
+            const vcardURL = URL.createObjectURL(vcardBlob);
+            document.querySelector('.add-contact-btn').href = vcardURL;
+        });
+    </script>
+</body>
+</html>
