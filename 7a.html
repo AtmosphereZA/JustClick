@@ -1146,7 +1146,8 @@
             background-color: rgba(255, 255, 255, 0.9);
             padding: 15px 0;
             z-index: 999; /* Below mobile menu and header */
-            overflow: hidden;
+            overflow-x: auto;
+            overflow-y: hidden;
             white-space: nowrap;
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
             border-top: 3px solid #feca57;
@@ -1154,6 +1155,29 @@
             transform: translateY(100%);
             opacity: 0;
             transition: all 0.4s ease-in-out;
+            cursor: grab;
+        }
+
+        .sponsor-footer:active {
+            cursor: grabbing;
+        }
+
+        .sponsor-footer::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .sponsor-footer::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .sponsor-footer::-webkit-scrollbar-thumb {
+            background: #feca57;
+            border-radius: 3px;
+        }
+
+        .sponsor-footer::-webkit-scrollbar-thumb:hover {
+            background: #ff6b6b;
         }
 
         .sponsor-footer.visible {
@@ -1162,15 +1186,17 @@
         }
 
         .sponsor-scroll {
-            display: inline-block;
-            animation: scroll-left 40s linear infinite;
+            display: flex;
+            animation: none;
+            gap: 40px;
         }
 
         .sponsor-scroll a {
             display: inline-block;
-            margin: 0 40px;
+            margin: 0 20px;
             vertical-align: middle;
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .sponsor-scroll img {
@@ -1194,14 +1220,7 @@
             z-index: 1004;
         }
 
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-}
+    
 
 
         /* Subtle Designer Credit Styles */
@@ -1592,9 +1611,7 @@
         <div class="sponsor-scroll">
             <!-- Sponsor logos will be dynamically inserted here by JavaScript -->
         </div>
-        <div class="sponsor-scroll">
-            <!-- This is a duplicate for a seamless loop -->
-        </div>
+       
     </footer>
 
     <script>
@@ -1750,10 +1767,25 @@
             let sponsorHTML = '';
 
             const sponsorLinks = {
+                "3beertjies.png": "https://3beertjies.co.za/",
+                "babies-footsteps.jpg": "https://www.facebook.com/babiesfootsteps/",
                 "bigtree.jpg": "https://bigtreetherapy.co.za/",
+                "bonthuis.png": "https://bonthuis.co.za/",
+                "bright-beginnings.webp": "https://www.brightbeginningspreschool.co.za/",
+                "bronberg.png": "https://bronbergakademie.co.za/",
                 "charisemeistre.jpg": "https://www.facebook.com/groups/999588490084153/",
+                "cradle-to-crayons.jpg": "https://cradletocrayons.co.za/",
+                "curro.png": "https://curro.co.za/",
+                "dinkydots.webp": "https://dinkydots.co.za/",
                 "germcure.jpg": "https://germcure.co.za/",
-                "jetline.jpg": "https://www.jetline.co.za/"
+                "jetline.jpg": "https://www.jetline.co.za/",
+                "kiddiesaurus.png": "https://www.kiddiesaurus.co.za/",
+                "kinderdorpie.png": "https://diekinderdorpiekleuterskool.co.za/",
+                "kleinspoortjies.png": "https://hennops.com/kleinspoortjies/",
+                "ladybird.jpg": "https://www.facebook.com/LadybirdKleuterskool/",
+                "littlelambs.png": "https://littlelambsbabyhouse.wordpress.com/",
+                "ls-garsfontein.png": "https://www.laerskoolgarsies.co.za/"
+                // Add actual URLs for each sponsor
             };
 
             sponsors.forEach(sponsorFile => {
@@ -1761,10 +1793,8 @@
                 sponsorHTML += `<a href="${link}" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/${sponsorFile}" alt="Sponsor Logo"></a>`;
             });
 
-            // Set the HTML for both scrolling containers to create a seamless loop
-            document.querySelectorAll('.sponsor-scroll').forEach(container => {
-                container.innerHTML = sponsorHTML;
-            });
+            // Set the HTML for the scrolling container
+            sponsorContainer.innerHTML = sponsorHTML;
         });
 
         // Handle designer credit visibility
