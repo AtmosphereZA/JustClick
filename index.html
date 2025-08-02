@@ -289,10 +289,10 @@
         }
 
         .menu-logo {
-            position: absolute;
-            bottom: 80px;
-            left: 20px;
+            position: fixed;
+            bottom: 20px;
             right: 20px;
+            width: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -300,11 +300,19 @@
             background: rgba(255, 255, 255, 0.2);
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 20px;
-            z-index: 2;
+            z-index: 1002;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             transform: rotate(-1deg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
+
+        .mobile-menu.active ~ .menu-logo {
+                    opacity: 1;
+                    visibility: visible;
+                }
 
         .menu-logo img {
             width: 50px;
@@ -1355,10 +1363,12 @@
         <a href="#why-different">Why & What</a>
         <a href="#practical">Info</a>
         <a href="#contact">Apply</a>
-        <div class="menu-logo">
-            <img src="assets/images/logo.png" alt="JustClick Logo">
-            <div class="logo-text">JustClick<br><span>Educational Technology</span></div>
         </div>
+
+    <!-- Mobile Menu Logo - Fixed Position -->
+    <div class="menu-logo">
+        <img src="assets/images/logo.png" alt="JustClick Logo">
+        <div class="logo-text">JustClick<br><span>Educational Technology</span></div>
     </div>
 
     <!-- Hero Section -->
