@@ -423,6 +423,15 @@
             animation: bounce 2s ease-in-out infinite;
         }
 
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: rotate(-1deg) translateY(0); }
             40% { transform: rotate(-1deg) translateY(-10px); }
@@ -1187,8 +1196,12 @@
 
         .sponsor-scroll {
             display: flex;
-            animation: none;
+            animation: scroll-left 40s linear infinite;
             gap: 40px;
+        }
+
+        .sponsor-footer:hover .sponsor-scroll {
+            animation-play-state: paused;
         }
 
         .sponsor-scroll a {
@@ -1611,7 +1624,9 @@
         <div class="sponsor-scroll">
             <!-- Sponsor logos will be dynamically inserted here by JavaScript -->
         </div>
-       
+        <div class="sponsor-scroll">
+            <!-- This is a duplicate for a seamless loop -->
+        </div>
     </footer>
 
     <script>
@@ -1793,8 +1808,10 @@
                 sponsorHTML += `<a href="${link}" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/${sponsorFile}" alt="Sponsor Logo"></a>`;
             });
 
-            // Set the HTML for the scrolling container
-            sponsorContainer.innerHTML = sponsorHTML;
+            // Set the HTML for both scrolling containers to create a seamless loop
+            document.querySelectorAll('.sponsor-scroll').forEach(container => {
+                container.innerHTML = sponsorHTML;
+            });
         });
 
         // Handle designer credit visibility
