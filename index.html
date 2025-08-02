@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+<!-- Version 7a -->
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0D94632F"></script>
 <script>
@@ -14,9 +17,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustClick | Perceptual Stimulation | Pretoria</title>
-   <!-- Favicon -->
+   
+<!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://atmosphereza.github.io/JustClick/favicon.ico">
     <link rel="icon" type="image/png" href="https://atmosphereza.github.io/JustClick/favicon.png">
     <link rel="apple-touch-icon" href="https://atmosphereza.github.io/JustClick/favicon.png">
+
     <style>
         * {
             margin: 0;
@@ -96,11 +102,6 @@
             background: #ff6b6b;
         }
 
-        header.compact .logo {
-            opacity: 0;
-            transform: rotate(-2deg) scale(0.8);
-            pointer-events: none;
-        }
 
         nav {
             display: flex;
@@ -145,13 +146,13 @@
             right: -350px;
             width: 320px;
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #ff4444 0%, #feca57 25%, #4ecdc4 50%, #3742fa 75%, #ff6b6b 100%);
             z-index: 1001;
             padding: 80px 20px 20px;
             transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-left: 3px solid #4ecdc4;
-            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            border-left: 5px solid #feca57;
+            box-shadow: -10px 0 30px rgba(255, 107, 107, 0.4);
+            backdrop-filter: blur(15px);
         }
 
         .mobile-menu::before {
@@ -161,8 +162,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tech-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(78,205,196,0.1)" stroke-width="0.5"/><circle cx="0" cy="0" r="1" fill="rgba(78,205,196,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23tech-grid)"/></svg>');
-            opacity: 0.7;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fun-nav" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="3" fill="rgba(255,255,255,0.1)"/><polygon points="8,8 10,11 8,14 6,11" fill="rgba(254,202,87,0.15)"/><rect x="18" y="18" width="3" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23fun-nav)"/></svg>');
+            opacity: 0.3;
             pointer-events: none;
         }
 
@@ -175,20 +176,23 @@
             z-index: 2;
             text-align: center;
             margin-bottom: 2rem;
-            color: #4ecdc4;
-            font-size: 1.2rem;
-            font-weight: 800;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
+            transform: rotate(-1deg);
         }
 
         .tech-header::after {
             content: '';
             display: block;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #feca57, transparent);
             margin-top: 0.5rem;
+            border-radius: 2px;
         }
 
         .mobile-menu a {
@@ -197,63 +201,73 @@
             color: white;
             text-decoration: none;
             font-size: 1rem;
-            font-weight: 700;
-            margin: 0.8rem 0;
-            padding: 1rem;
-            border-radius: 10px;
-            background: rgba(78, 205, 196, 0.1);
+            font-weight: 800;
+            margin: 0.6rem 0;
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2);
             text-transform: uppercase;
             transition: all 0.3s ease;
-            border: 1px solid rgba(78, 205, 196, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             position: relative;
             z-index: 2;
             letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transform: rotate(1deg);
         }
 
         .mobile-menu a::before {
-            content: '▶';
-            margin-right: 10px;
-            color: #4ecdc4;
-            font-size: 0.8rem;
+            content: '';
+            background-image: url('assets/images/mousemenu.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: inline-block;
             transition: all 0.3s ease;
         }
 
         .mobile-menu a:hover {
-            background: rgba(78, 205, 196, 0.2);
-            border-color: #4ecdc4;
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+            background: #feca57;
+            border-color: white;
+            color: #333;
+            transform: rotate(0deg) translateX(10px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(254, 202, 87, 0.4);
         }
 
         .mobile-menu a:hover::before {
-            color: #feca57;
-            transform: scale(1.2);
+            transform: scale(1.3) rotate(10deg);
         }
 
         .close-menu {
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 1.5rem;
-            color: #4ecdc4;
+            font-size: 1.8rem;
+            color: white;
             cursor: pointer;
-            background: rgba(78, 205, 196, 0.1);
-            border: 2px solid rgba(78, 205, 196, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             z-index: 3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: rotate(-5deg);
         }
 
         .close-menu:hover {
-            background: rgba(78, 205, 196, 0.2);
-            border-color: #4ecdc4;
+            background: #ff6b6b;
+            border-color: white;
             color: white;
-            transform: rotate(90deg);
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
 
         .menu-backdrop {
@@ -282,37 +296,42 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
-            background: rgba(78, 205, 196, 0.05);
-            border: 1px solid rgba(78, 205, 196, 0.2);
-            border-radius: 15px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
             z-index: 2;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transform: rotate(-1deg);
         }
 
         .menu-logo img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
             margin-right: 15px;
-            border-radius: 10px;
+            border-radius: 15px;
             background: white;
-            padding: 5px;
-            border: 2px solid #4ecdc4;
+            padding: 8px;
+            border: 3px solid #feca57;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
         .logo-text {
-            color: #4ecdc4;
-            font-weight: 800;
-            font-size: 1.1rem;
+            color: white;
+            font-weight: 900;
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text span {
-            font-size: 0.7rem;
-            color: rgba(78, 205, 196, 0.7);
-            font-weight: 600;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 700;
             text-transform: none;
             letter-spacing: 0.5px;
         }
@@ -333,7 +352,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             border: 3px solid #feca57;
             transform: rotate(-2deg);
-            transition: transform 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .logo:hover {
@@ -402,6 +421,15 @@
             text-shadow: 3px 3px 0px #ff6b6b, 6px 6px 0px #4ecdc4;
             transform: rotate(-1deg);
             animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         @keyframes bounce {
@@ -728,9 +756,12 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .team-card {
@@ -745,6 +776,9 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .team-card:nth-child(even) {
@@ -1015,6 +1049,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
             .option-badge {
                 top: 80px;
                 right: 15px;
@@ -1106,18 +1145,181 @@
         .floating-element:nth-child(6) { left: 90%; animation-delay: 5s; }
         .floating-element:nth-child(7) { left: 50%; animation-delay: 6s; }
         .floating-element:nth-child(8) { left: 60%; animation-delay: 1.5s; }
+
+        /* Sponsor Footer Styles */
+        .sponsor-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            z-index: 999; /* Below mobile menu and header */
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #feca57;
+            backdrop-filter: blur(8px);
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            cursor: grab;
+            display: flex;
+        }
+
+        .sponsor-footer:hover {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar-thumb {
+            background: #feca57;
+            border-radius: 3px;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar-thumb:hover {
+            background: #ff6b6b;
+        }
+
+        .sponsor-footer:active {
+            cursor: grabbing;
+        }
+
+      
+
+        .sponsor-footer.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .sponsor-scroll {
+            display: flex;
+            animation: scroll-left 40s linear infinite;
+            gap: 40px;
+        }
+
+        .sponsor-footer:hover .sponsor-scroll {
+            animation-play-state: paused;
+        }
+
+        .sponsor-scroll a {
+            display: inline-block;
+            margin: 0 20px;
+            vertical-align: middle;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .sponsor-scroll img {
+            height: 50px; /* Adjust height as needed */
+            vertical-align: middle;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sponsor-scroll a:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.5);
+            z-index: 1004;
+            position: relative;
+        }
+
+        .sponsor-scroll a:hover {
+            z-index: 1004;
+        }
+
+    
+
+
+        /* Subtle Designer Credit Styles */
+        .designer-credit {
+            position: fixed;
+            bottom: -60px;
+            right: 20px;
+            background: rgba(30, 30, 30, 0.95);
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.7rem;
+            font-weight: 400;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            z-index: 1003;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .designer-credit.visible {
+            bottom: 20px;
+            opacity: 1;
+        }
+
+        .credit-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .credit-logo {
+            height: 20px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .credit-text {
+            color: #cccccc;
+            font-weight: 300;
+            font-size: 0.65rem;
+        }
+
+        .credit-link {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .credit-link:hover {
+            color: #ffed4e;
+        }
+
+        .credit-link:hover .credit-logo {
+            transform: scale(1.1);
+        }
+
+        /* Hide when sponsor footer is visible */
+        .sponsor-footer.visible ~ * .designer-credit {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="floating-elements">
+        <div class="floating-element"><img src="assets/images/mouse.png" alt="Mouse"></div>
         <div class="floating-element">🎈</div>
         <div class="floating-element">⭐</div>
         <div class="floating-element">🖥️</div>
         <div class="floating-element">🖨️</div>
         <div class="floating-element">🧩</div>
-        <div class="floating-element">🖱️</div>
+        <div class="floating-element">💾</div>
         <div class="floating-element"><img src="assets/images/bgstar.png" alt="Star"></div>
-        <div class="floating-element"><img src="assets/images/bgmouse.png" alt="Mouse"></div>
     </div>
 
 
@@ -1129,9 +1331,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#team">Meet the Team</a></li>
                 <li><a href="#why-different">Why & What</a></li>
                 <li><a href="#practical">Info</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Apply</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -1148,9 +1351,10 @@
         <div class="tech-header">Navigation</div>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#team">Meet the Team</a>
         <a href="#why-different">Why & What</a>
         <a href="#practical">Info</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Apply</a>
         <div class="menu-logo">
             <img src="assets/images/logo.png" alt="JustClick Logo">
             <div class="logo-text">JustClick<br><span>Educational Technology</span></div>
@@ -1283,30 +1487,30 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team">
+    <section id="team" class="team">
         <div class="container">
             <h2 class="section-title">The JustClick Team</h2>
             <div class="team-grid">
-                <div class="team-card">
+                <a href="rina.html" class="team-card">
                     <div class="team-photo"><img src="assets/images/rina-photo.jpg" alt="Rina Reinecke" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Rina Reinecke</h3>
                     <p><strong>Founder & Owner</strong></p>
-                </div>
-                <div class="team-card">
+                </a>
+                <a href="rina.html" class="team-card">
                     <div class="team-photo"><img src="assets/images/alida-photo.jpg" alt="Alida vd Kruk" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Alida vd Kruk</h3>
                     <p><strong>Senior Educator</strong></p>
-                </div>
-                <div class="team-card">
+                </a>
+                <a href="rina.html" class="team-card">
                     <div class="team-photo"><img src="assets/images/nadia-photo.jpg" alt="Nadia Scholtz" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Nadia Scholtz</h3>
                     <p><strong>Educational Specialist</strong></p>
-                </div>
-                <div class="team-card">
+                </a>
+                <a href="rina.html" class="team-card">
                     <div class="team-photo"><img src="assets/images/sonja-photo.jpg" alt="Sonja Joubert" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     <h3>Sonja Joubert</h3>
                     <p><strong>Educator</strong></p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1424,6 +1628,16 @@
         </div>
     </section>
 
+    <!-- Sponsor Footer -->
+    <footer class="sponsor-footer">
+        <div class="sponsor-scroll">
+            <!-- Sponsor logos will be dynamically inserted here by JavaScript -->
+        </div>
+        <div class="sponsor-scroll">
+            <!-- This is a duplicate for a seamless loop -->
+        </div>
+    </footer>
+
     <script>
         // Simple form handling
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
@@ -1469,18 +1683,65 @@
         function handleHeaderScroll() {
             const header = document.querySelector('header');
             const body = document.body;
+            const logo = document.querySelector('.logo');
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            if (scrollTop > 100) {
-                header.classList.add('compact');
-                body.classList.add('scrolled');
+            // Gradual logo fade based on scroll position
+            const fadeStart = 50;
+            const fadeEnd = 150;
+            let opacity = 1;
+            let scale = 1;
+            
+            if (scrollTop >= fadeStart) {
+                const fadeProgress = Math.min((scrollTop - fadeStart) / (fadeEnd - fadeStart), 1);
+                opacity = 1 - fadeProgress;
+                scale = 1 - (fadeProgress * 0.4); // Scale from 1 to 0.6
+                
+                if (scrollTop > 100) {
+                    header.classList.add('compact');
+                    body.classList.add('scrolled');
+                } else {
+                    header.classList.remove('compact');
+                    body.classList.remove('scrolled');
+                }
+                
+                // Apply gradual fade
+                logo.style.opacity = opacity;
+                logo.style.transform = `rotate(-2deg) scale(${scale})`;
+                
+                if (opacity <= 0) {
+                    logo.style.pointerEvents = 'none';
+                } else {
+                    logo.style.pointerEvents = 'auto';
+                }
             } else {
                 header.classList.remove('compact');
                 body.classList.remove('scrolled');
+                logo.style.opacity = '1';
+                logo.style.transform = 'rotate(-2deg) scale(1)';
+                logo.style.pointerEvents = 'auto';
             }
         }
 
         window.addEventListener('scroll', handleHeaderScroll);
+        window.addEventListener('scroll', handleSponsorFooter);
+
+        // Handle sponsor footer visibility on scroll
+        function handleSponsorFooter() {
+            const footer = document.querySelector('.sponsor-footer');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show sponsor footer when user scrolls past 30% of the page
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            
+            if (scrollPercentage > 30) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        }
 
         // Hamburger menu functionality
         function openMenu() {
@@ -1501,6 +1762,95 @@
         document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+
+        // Sponsor Scroller
+        document.addEventListener('DOMContentLoaded', function() {
+            const sponsors = [
+                "3beertjies.png",
+                "babies-footsteps.jpg",
+                "bigtree.jpg",
+                "bonthuis.png",
+                "bright-beginnings.webp",
+                "bronberg.png",
+                "charisemeistre.jpg",
+                "cradle-to-crayons.jpg",
+                "curro.png",
+                "dinkydots.webp",
+                "germcure.jpg",
+                "jetline.jpg",
+                "kiddiesaurus.png",
+                "kinderdorpie.png",
+                "kleinspoortjies.png",
+                "ladybird.jpg",
+                "littlelambs.png",
+                "ls-garsfontein.png"
+                // Add more sponsor image filenames here
+            ];
+
+            const sponsorContainer = document.querySelector('.sponsor-scroll');
+            let sponsorHTML = '';
+
+            const sponsorLinks = {
+                "3beertjies.png": "https://3beertjies.co.za/",
+                "babies-footsteps.jpg": "https://www.facebook.com/babiesfootsteps/",
+                "bigtree.jpg": "https://bigtreetherapy.co.za/",
+                "bonthuis.png": "https://bonthuis.co.za/",
+                "bright-beginnings.webp": "https://www.brightbeginningspreschool.co.za/",
+                "bronberg.png": "https://bronbergakademie.co.za/",
+                "charisemeistre.jpg": "https://www.facebook.com/groups/999588490084153/",
+                "cradle-to-crayons.jpg": "https://cradletocrayons.co.za/",
+                "curro.png": "https://curro.co.za/",
+                "dinkydots.webp": "https://dinkydots.co.za/",
+                "germcure.jpg": "https://germcure.co.za/",
+                "jetline.jpg": "https://www.jetline.co.za/",
+                "kiddiesaurus.png": "https://www.kiddiesaurus.co.za/",
+                "kinderdorpie.png": "https://diekinderdorpiekleuterskool.co.za/",
+                "kleinspoortjies.png": "https://hennops.com/kleinspoortjies/",
+                "ladybird.jpg": "https://www.facebook.com/LadybirdKleuterskool/",
+                "littlelambs.png": "https://littlelambsbabyhouse.wordpress.com/",
+                "ls-garsfontein.png": "https://www.laerskoolgarsies.co.za/"
+                // Add actual URLs for each sponsor
+            };
+
+            sponsors.forEach(sponsorFile => {
+                const link = sponsorLinks[sponsorFile] || "#";
+                sponsorHTML += `<a href="${link}" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/${sponsorFile}" alt="Sponsor Logo"></a>`;
+            });
+
+            // Set the HTML for both scrolling containers to create a seamless loop
+            document.querySelectorAll('.sponsor-scroll').forEach(container => {
+                container.innerHTML = sponsorHTML;
+            });
+        });
+
+        // Handle designer credit visibility
+        function handleDesignerCredit() {
+            const credit = document.querySelector('.designer-credit');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show credit when user is near bottom (last 15% of page)
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            
+            if (scrollPercentage > 85) {
+                credit.classList.add('visible');
+            } else {
+                credit.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', handleDesignerCredit);
     </script>
+
+    <!-- Designer Credit -->
+    <div class="designer-credit">
+        <div class="credit-content">
+            <span class="credit-text">Designed by</span>
+            <a href="https://www.lrcreative.co.za" target="_blank" rel="noopener noreferrer" class="credit-link">
+                <img src="assets/images/lrcreative-logo.png" alt="LR Creative" class="credit-logo">
+            </a>
+        </div>
+    </div>
 </body>
 </html>
