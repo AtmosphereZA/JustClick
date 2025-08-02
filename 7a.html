@@ -1155,8 +1155,7 @@
             background-color: rgba(255, 255, 255, 0.9);
             padding: 15px 0;
             z-index: 999; /* Below mobile menu and header */
-            overflow-x: auto;
-            overflow-y: hidden;
+            overflow: hidden;
             white-space: nowrap;
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
             border-top: 3px solid #feca57;
@@ -1165,29 +1164,37 @@
             opacity: 0;
             transition: all 0.4s ease-in-out;
             cursor: grab;
+            display: flex;
+        }
+
+        .sponsor-footer:hover {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar-thumb {
+            background: #feca57;
+            border-radius: 3px;
+        }
+
+        .sponsor-footer:hover::-webkit-scrollbar-thumb:hover {
+            background: #ff6b6b;
         }
 
         .sponsor-footer:active {
             cursor: grabbing;
         }
 
-        .sponsor-footer::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .sponsor-footer::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-        }
-
-        .sponsor-footer::-webkit-scrollbar-thumb {
-            background: #feca57;
-            border-radius: 3px;
-        }
-
-        .sponsor-footer::-webkit-scrollbar-thumb:hover {
-            background: #ff6b6b;
-        }
+      
 
         .sponsor-footer.visible {
             transform: translateY(0);
@@ -1324,9 +1331,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#team">Meet the Team</a></li>
                 <li><a href="#why-different">Why & What</a></li>
                 <li><a href="#practical">Info</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Apply</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -1343,9 +1351,10 @@
         <div class="tech-header">Navigation</div>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#team">Meet the Team</a>
         <a href="#why-different">Why & What</a>
         <a href="#practical">Info</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Apply</a>
         <div class="menu-logo">
             <img src="assets/images/logo.png" alt="JustClick Logo">
             <div class="logo-text">JustClick<br><span>Educational Technology</span></div>
@@ -1478,7 +1487,7 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team">
+    <section id="team" class="team">
         <div class="container">
             <h2 class="section-title">The JustClick Team</h2>
             <div class="team-grid">
