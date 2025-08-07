@@ -1203,6 +1203,13 @@
             z-index: 1;
         }
 
+        /* Hide floating elements on mobile to prevent weird appearance at top */
+        @media (max-width: 768px) {
+            .floating-elements {
+                display: none;
+            }
+        }
+
         .floating-element {
             position: absolute;
             font-size: 2rem;
